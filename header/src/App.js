@@ -7,6 +7,14 @@ const App = () => {
       <h1 className="main-heading">
         eDUKAAN
       </h1>
+      <div style={{ right: "7px" }} className="header-section">
+        {
+          <>
+            <button className="header-tab"> Help </button>
+            <button className="header-tab"> Contact Us </button>
+          </>
+        }
+      </div>
     </div>
   );
 };
