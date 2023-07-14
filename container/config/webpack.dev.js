@@ -1,4 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const packageJson = require("../package.json");
 const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
 
@@ -43,6 +45,13 @@ const devConfig = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+    }),
+    new ModuleFederationPlugin({
+      name: "container",
+      remotes: {
+        header: "header@http://localhost:3001/remoteEntry.js",
+      },
+      shared: packageJson.dependencies,
     }),
   ],
 };
