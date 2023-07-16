@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./remote_modules/header";
+import ContactUs from "./components/ContactUs";
 
 const App = () => {
   return (
@@ -9,9 +10,7 @@ const App = () => {
       <div>
         <Routes>
           <Route path="/help" />
-          <Route
-            path="/contact-us"
-          />
+          <Route path="/contact-us" element={<ContactUs />} />
         </Routes>
       </div>
     </div>
