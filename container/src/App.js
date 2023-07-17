@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./remote_modules/header";
+import Help from "./components/Help";
 import ContactUs from "./components/ContactUs";
 
 const App = () => {
@@ -9,7 +10,7 @@ const App = () => {
       <Header />
       <div>
         <Routes>
-          <Route path="/help" />
+          <Route path="/help" element={<Help />} />
           <Route path="/contact-us" element={<ContactUs />} />
         </Routes>
       </div>
