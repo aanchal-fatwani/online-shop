@@ -1,4 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const packageJson = require("../package.json");
 const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
 
@@ -33,6 +35,14 @@ const devConfig = {
     ],
   },
   plugins: [
+    new ModuleFederationPlugin({
+      name: "dashboard",
+      filename: "remoteEntry.js",
+      exposes: {
+        "./DashboardComponent": "./src/bootstrap",
+      },
+      shared: packageJson.dependencies,
+    }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
