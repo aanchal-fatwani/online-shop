@@ -5,7 +5,7 @@ export function getAllCategories() {
 }
 
 export function getCategoryProducts(category) {
-    fetch(`https://dummyjson.com/products/category/${category}`)
+    return fetch(`https://dummyjson.com/products/category/${category}`)
         .then(res => res.json())
         // .then(console.log);
 }

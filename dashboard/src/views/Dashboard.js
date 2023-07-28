@@ -15,7 +15,7 @@ export default function Dashboard() {
       {categoryTiles.map(c => <button>{c}</button>)}
     </div>
     <div>
-      {phones.map(el => <button>{el.images[0]}</button>)}
+      {phones.map(el => <img src={`${el.images[0]}`} height="200" width="200" />)}
     </div>
   </div>
     ;
