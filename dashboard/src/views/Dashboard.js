@@ -5,6 +5,7 @@ export default function Dashboard() {
   const [categoryTiles, setCategoryTiles] = useState([])
   const [phones, setPhones] = useState([])
   const [laptops, setLaptops] = useState([])
+  const [searchItem, setSearchItem] = useState('Test');
   useEffect(() => {
     let categories = getAllCategories();
     categories.then(response => { console.log(response); setCategoryTiles(response) });
@@ -14,6 +15,7 @@ export default function Dashboard() {
     laptopsList.then(response => { console.log(response); setLaptops(response.products) });
   }, [])
   return <div>
+    <input value={searchItem}/>
     <div>
       {categoryTiles.map(c => <button>{c}</button>)}
     </div>
