@@ -5,7 +5,7 @@ export default function Dashboard() {
   const [categoryTiles, setCategoryTiles] = useState([])
   const [phones, setPhones] = useState([])
   const [laptops, setLaptops] = useState([])
-  const [searchItem, setSearchItem] = useState('Test');
+  const [searchItem, setSearchItem] = useState('');
   useEffect(() => {
     let categories = getAllCategories();
     categories.then(response => { console.log(response); setCategoryTiles(response) });
@@ -14,8 +14,12 @@ export default function Dashboard() {
     let laptopsList = getCategoryProducts('laptops');
     laptopsList.then(response => { console.log(response); setLaptops(response.products) });
   }, [])
+  const searchInputHandler = (e) =>{
+    console.log(e.target.value)
+    setSearchItem(e.target.value)
+  }
   return <div>
-    <input value={searchItem}/>
+    <input type="text" value={searchItem} onChange={e=>searchInputHandler(e)} />
     <div>
       {categoryTiles.map(c => <button>{c}</button>)}
     </div>
