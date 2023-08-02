@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./remote_modules/header";
 const Dashboard = lazy(() => import("./remote_modules/dashboard"));
+const Categories = lazy(() => import("./remote_modules/categories"));
 import Help from "./components/Help";
 import ContactUs from "./components/ContactUs";
 
@@ -21,6 +22,13 @@ const App = () => {
           <Routes>
             <Route path="/help" element={<Help />} />
             <Route path="/contact-us" element={<ContactUs />} />
+            <Route
+              path="/category"
+              exact
+              element={
+                <Categories />
+              }
+            />
             <Route
               path="/"
               exact
