@@ -23,8 +23,7 @@ const App = () => {
             <Route path="/help" element={<Help />} />
             <Route path="/contact-us" element={<ContactUs />} />
             <Route
-              path="/category"
-              exact
+              path="/category/:cat"
               element={
                 <Categories />
               }

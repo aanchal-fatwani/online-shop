@@ -21,7 +21,7 @@ export default function Dashboard() {
   return <div>
     <input type="text" value={searchItem} onChange={e=>searchInputHandler(e)} />
     <div>
-      {categoryTiles.map(c => <button>{c}</button>)}
+      {categoryTiles.map(c => <button><a href={`/category/${c}`}>{c}</a></button>)}
     </div>
     <div>
       {phones.map(el => <img src={`${el.images[0]}`} height="200" width="200" />)}
