@@ -3,12 +3,12 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 
-const mount = (el) => {
+const mount = (el, navigate, routeParams) => {
   const root = createRoot(el);
 
   root.render(
     <BrowserRouter>
-      <App />
+      <App routeParams={routeParams} />
     </BrowserRouter>
   );
 };

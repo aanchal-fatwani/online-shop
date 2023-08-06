@@ -1,10 +1,11 @@
 import React from "react";
 
-const App = () => {
+const App = ({ routeParams }) => {
+  const { category } = routeParams;
   return (
     <div>
       <h1>
-        Categories
+        Categories - {category}
       </h1>
     </div>
   );

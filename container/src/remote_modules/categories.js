@@ -9,7 +9,7 @@ const Categories = () => {
   console.log(routeParams.category)
 
   useEffect(() => {
-    mount(ref.current, navigate);
+    mount(ref.current, navigate, routeParams);
   }, []);
 
   return (
