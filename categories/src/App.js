@@ -23,7 +23,7 @@ const App = ({ routeParams }) => {
   return (
     <div>
       <h1>
-        Categorie - {category.replace('-',' ')}
+        Category - {category.replace('-',' ')}
       </h1>
       {prods}
     </div>
