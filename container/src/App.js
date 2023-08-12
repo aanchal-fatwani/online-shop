@@ -9,7 +9,7 @@ import ContactUs from "./components/ContactUs";
 
 const App = () => {
   return (
-    <div style={{ backgroundColor: "rgb(227,227,227)", height: "100vh" }}>
+    <div style={{ backgroundColor: "white", height: "100vh" }}>
       <Header />
       <div>
         <Suspense

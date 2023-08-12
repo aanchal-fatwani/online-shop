@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getProductDetails } from "../apis/Products.js";
 import ImageViewer from "./ImageViewer";
+import ProductDetails from "./ProductDetails";
 
 export default function Products({ routeParams }) {
   const { productId } = routeParams;
@@ -15,9 +16,9 @@ export default function Products({ routeParams }) {
   }, []);
 
   return (
-    <div>
-      Products {`${productId}`}
+    <div style={{ display: "flex" }}>
       <ImageViewer images={productDetails.images} />
+      <ProductDetails details={productDetails} />
     </div>
   );
 }
