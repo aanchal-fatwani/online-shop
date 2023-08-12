@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Header from "./remote_modules/header";
 const Dashboard = lazy(() => import("./remote_modules/dashboard"));
 const Categories = lazy(() => import("./remote_modules/categories"));
+const Products = lazy(() => import("./remote_modules/products"));
 import Help from "./components/Help";
 import ContactUs from "./components/ContactUs";
 
@@ -26,6 +27,12 @@ const App = () => {
               path="/category/:category"
               element={
                 <Categories />
+              }
+            />
+            <Route
+              path="/product/:productId"
+              element={
+                <Products />
               }
             />
             <Route
