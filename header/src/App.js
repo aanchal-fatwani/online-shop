@@ -55,11 +55,12 @@ const App = ({ navigate }) => {
       let res = response;
       setAllCategories(res);
       res = res.slice(0, 9);
+      res.unshift("All");
       res = res.map((el) => (
         <div>
           <a
             style={{ textDecoration: "none", color: "white" }}
-            href={`/category/${el}`}
+            href={`/category/${el.toLowerCase()}`}
           >
             {unslugify(el)}
           </a>
