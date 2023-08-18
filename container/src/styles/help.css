@@ -1,13 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
 :root {
-  --accent-color: #093b67;
+  --accent-color: rgb(35, 47, 62);
+}
+
+.container {
+  color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
 }
 
 .faq-head {
   margin: 80px 0 30px;
   text-align: center;
   color: var(--accent-color);
+  padding-top: 10px;
 }
 
 .faq-container {
