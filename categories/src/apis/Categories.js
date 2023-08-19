@@ -3,3 +3,9 @@ export function getCategoryProducts(category) {
         .then(res => res.json())
         // .then(console.log);
 }
+
+export function getAllCategories() {
+    return fetch('https://dummyjson.com/products/categories')
+        .then(res => res.json())
+    // .then(console.log);
+}
