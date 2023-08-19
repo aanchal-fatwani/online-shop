@@ -154,7 +154,11 @@ const App = ({ navigate }) => {
               </button>
             </>
           }
-          <ShoppingCartIcon style={{ margin:'1rem 2rem', fontSize:'2rem'}} />
+          <a href={`/cart`}>
+            <ShoppingCartIcon
+              style={{ margin: "1rem 2rem", fontSize: "2rem", color: "black" }}
+            />
+          </a>
         </div>
       </div>
       <div
