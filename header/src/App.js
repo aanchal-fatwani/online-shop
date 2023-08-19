@@ -5,6 +5,7 @@ import { getAllCategories } from "./apis/Categories";
 import InputAdornment from "@mui/material/InputAdornment";
 import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 
@@ -153,6 +154,7 @@ const App = ({ navigate }) => {
               </button>
             </>
           }
+          <ShoppingCartIcon style={{ margin:'1rem 2rem', fontSize:'2rem'}} />
         </div>
       </div>
       <div
