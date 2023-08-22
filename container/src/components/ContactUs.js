@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import "../styles/contactus.scss";
 
 const ContactUs = () => {
+  console.log("in contact")
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -43,7 +44,7 @@ const ContactUs = () => {
   }
 
   return (
-    <div className="container">
+    <div className="contact-us-container">
       <div className="contact-us-card">
         <h1>Send us a Message or Share your Query!</h1>
         <form className="form">
