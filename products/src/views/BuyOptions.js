@@ -52,6 +52,9 @@ export default function BuyOptions({ stock }) {
           fontSize: "1.2rem",
           marginRight: "1rem",
         }}
+        onClick={() => {
+          alert("Added!");
+        }}
       >
         Add To Cart
       </button>
