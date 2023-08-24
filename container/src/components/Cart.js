@@ -40,7 +40,7 @@ export default function Cart() {
                 />
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <h5>
-                    {title} ({quantity})
+                    {title} (x{quantity})
                   </h5>
                   <h3>Rs. {price}</h3>
                   {/* {price * quantity} */}
@@ -77,12 +77,59 @@ export default function Cart() {
                 fontSize: "1.2rem",
                 marginRight: "1rem",
               }}
+              onClick={() => {
+                alert("Congratulations!! Order Placed..");
+              }}
             >
               Buy Now
             </button>
           </React.Fragment>
         ) : (
-          <h4>Your Cart is Empty</h4>
+          <div style={{ textAlign: "center" }}>
+            <h2>Your Cart is Empty</h2>
+            <div
+              style={{
+                margin: "1rem",
+              }}
+            >
+              <a
+                style={{
+                  textDecoration: "none",
+                  color: "#007185",
+                }}
+                href="/"
+              >
+                Shop top deals
+              </a>
+            </div>
+            <div style={{ margin: "0 -5rem", padding: "3rem 0" }}>
+              <button
+                style={{
+                  padding: "0.5rem 2rem",
+                  borderRadius: "1rem",
+                  backgroundColor: "#F2C200",
+                  borderColor: "#F2C200",
+                  fontSize: "1.5rem",
+                  margin: "0 1rem",
+                }}
+              >
+                Sign in to your account
+              </button>
+            </div>
+            <div>
+              <button
+                style={{
+                  padding: "0.5rem 2rem",
+                  borderRadius: "1rem",
+                  backgroundColor: "#F2C200",
+                  borderColor: "#F2C200",
+                  fontSize: "1.5rem",
+                }}
+              >
+                Sign up
+              </button>
+            </div>
+          </div>
         )}
       </div>
     </div>
