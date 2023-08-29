@@ -19,7 +19,7 @@ const Register = () => {
         </div>
         <p>
           Already have an account? &nbsp;
-          <a href="#" className="icon">
+          <a href="/login" className="icon">
             Sign in
           </a>
         </p>
