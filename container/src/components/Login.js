@@ -11,7 +11,7 @@ const Login = () => {
           <input type="text" />
           <button> Continue</button>
         </div>
-        <a href="#" className="icon">
+        <a href="/help" className="icon">
           Need help?
         </a>
       </div>
@@ -19,7 +19,9 @@ const Login = () => {
         <p>New here?</p>
       </div>
       <div className="btn">
-        <button> Create your new account</button>
+        <a href="/register">
+          <button> Create your new account</button>
+        </a>
       </div>
     </React.Fragment>
   );
