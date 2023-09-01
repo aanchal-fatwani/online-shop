@@ -103,31 +103,37 @@ export default function Cart() {
               </a>
             </div>
             <div style={{ margin: "0 -5rem", padding: "3rem 0" }}>
-              <button
-                style={{
-                  padding: "0.5rem 2rem",
-                  borderRadius: "1rem",
-                  backgroundColor: "#F2C200",
-                  borderColor: "#F2C200",
-                  fontSize: "1.5rem",
-                  margin: "0 1rem",
-                }}
-              >
-                Sign in to your account
-              </button>
+              <a href="/login">
+                <button
+                  style={{
+                    padding: "0.5rem 2rem",
+                    borderRadius: "1rem",
+                    backgroundColor: "#F2C200",
+                    borderColor: "#F2C200",
+                    fontSize: "1.5rem",
+                    margin: "0 1rem",
+                    cursor: "pointer",
+                  }}
+                >
+                  Sign in to your account
+                </button>
+              </a>
             </div>
             <div>
-              <button
-                style={{
-                  padding: "0.5rem 2rem",
-                  borderRadius: "1rem",
-                  backgroundColor: "#F2C200",
-                  borderColor: "#F2C200",
-                  fontSize: "1.5rem",
-                }}
-              >
-                Sign up
-              </button>
+              <a href="/register">
+                <button
+                  style={{
+                    padding: "0.5rem 2rem",
+                    borderRadius: "1rem",
+                    backgroundColor: "#F2C200",
+                    borderColor: "#F2C200",
+                    fontSize: "1.5rem",
+                    cursor: "pointer",
+                  }}
+                >
+                  Sign up
+                </button>
+              </a>
             </div>
           </div>
         )}
