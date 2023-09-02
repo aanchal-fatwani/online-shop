@@ -15,7 +15,7 @@ const Register = () => {
           <input type="text" />
           <label>Password</label>
           <input type="password" />
-          <button> Continue </button>
+          <button style={{ cursor: "pointer" }}> Continue </button>
         </div>
         <p>
           Already have an account? &nbsp;
