@@ -31,7 +31,7 @@ const Login = () => {
       </div>
       <div className="btn">
         <a href="/register">
-          <button> Create your new account</button>
+          <button style={{ cursor: "pointer" }}> Create your new account </button>
         </a>
       </div>
     </React.Fragment>
