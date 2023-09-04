@@ -20,7 +20,7 @@ const Login = () => {
         <div className="form">
           <label>Enter email</label>
           <input type="text" onChange={(e) => setEmail(e.target.value)}/>
-          <button onClick={(e) => submitHandler(e)}> Continue </button>
+          <button onClick={(e) => submitHandler(e)} style={{ cursor: "pointer" }}> Continue </button>
         </div>
         <a href="/help" className="icon">
           Need help?
