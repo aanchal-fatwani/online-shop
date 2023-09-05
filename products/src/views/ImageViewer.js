@@ -31,6 +31,7 @@ function ImageViewer({ images }) {
               style={{
                 maxWidth: "5rem",
                 minHeight: "5rem",
+                maxHeight: "5rem",
                 margin: "1rem",
                 borderRadius: "1rem",
               }}
