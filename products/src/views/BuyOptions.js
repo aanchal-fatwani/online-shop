@@ -58,18 +58,20 @@ export default function BuyOptions({ stock }) {
       >
         Add To Cart
       </button>
-      <button
-        style={{
-          backgroundColor: "#FFA41C",
-          borderColor: "#FFA41C",
-          padding: "0.8rem 3rem",
-          borderRadius: "2rem",
-          fontSize: "1.2rem",
-          marginRight: "1rem",
-        }}
-      >
-        Buy Now
-      </button>
+      <a href="/cart">
+        <button
+          style={{
+            backgroundColor: "#FFA41C",
+            borderColor: "#FFA41C",
+            padding: "0.8rem 3rem",
+            borderRadius: "2rem",
+            fontSize: "1.2rem",
+            marginRight: "1rem",
+          }}
+        >
+          Buy Now
+        </button>
+      </a>
     </div>
   );
 }
