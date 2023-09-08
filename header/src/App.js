@@ -102,7 +102,7 @@ const App = ({ navigate }) => {
         <h1
           className="main-heading"
           onClick={() => customNavigate("/")}
-          style={{ margin: "0 20rem 0 5rem" }}
+          style={{ margin: "0 20rem 0 5rem", cursor: "pointer" }}
         >
           eDUKAAN
         </h1>
