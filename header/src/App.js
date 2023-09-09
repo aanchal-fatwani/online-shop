@@ -118,7 +118,6 @@ const App = ({ navigate }) => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                {" "}
                 <SearchIcon style={{ color: "#232f3e" }} />
               </InputAdornment>
             ),
