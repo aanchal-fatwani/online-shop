@@ -6,6 +6,7 @@ import BuyOptions from "./BuyOptions";
 export default function ProductDetails({ details }) {
   console.log(details);
   const {
+    id,
     brand,
     title,
     rating,
@@ -13,6 +14,7 @@ export default function ProductDetails({ details }) {
     discountPercentage,
     description,
     stock,
+    images,
   } = details;
   return (
     <div style={{ margin: "4rem" }}>
@@ -31,7 +33,7 @@ export default function ProductDetails({ details }) {
       </div>
       <Price price={price * 10} discountPercentage={discountPercentage} />
       <div>{description}</div>
-      <BuyOptions stock={stock} />
+      <BuyOptions id={id} title={title} image={images?.[0]} price={price} stock={stock} />
     </div>
   );
 }
