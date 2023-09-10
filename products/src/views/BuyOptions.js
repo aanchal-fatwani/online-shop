@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default function BuyOptions({ stock }) {
+export default function BuyOptions({ id, title, image, price, stock }) {
   const [orgStock, setOrgStock] = useState(stock);
   const [updatedStock, setUpdatedStock] = useState(stock);
   const [quantity, setQuantity] = useState(1);
@@ -13,6 +13,57 @@ export default function BuyOptions({ stock }) {
     setQuantity(e.target.value);
     let newValue = orgStock - e.target.value;
     setUpdatedStock(newValue);
+  }
+
+  // function buyHandler(id, title, image, price, quantity) {
+  function buyHandler() {
+    if (localStorage) {
+      let cartItems = [];
+      let user = JSON.parse(localStorage.user);
+      if (localStorage.carts && localStorage.carts.length) {
+        cartItems = JSON.parse(localStorage.carts);
+        cartItems = cartItems[user];
+      }
+      let newCartItems = {
+        [user]: [
+          ...cartItems,
+          {
+            id,
+            title,
+            image,
+            price,
+            quantity,
+          },
+        ],
+      };
+      localStorage.setItem("carts", JSON.stringify(newCartItems));
+    }
+    window.location.href = "/cart";
+  }
+
+  function cartHandler() {
+    if (localStorage) {
+      let cartItems = [];
+      let user = JSON.parse(localStorage.user);
+      if (localStorage.carts && localStorage.carts.length) {
+        cartItems = JSON.parse(localStorage.carts);
+        cartItems = cartItems[user];
+      }
+      let newCartItems = {
+        [user]: [
+          ...cartItems,
+          {
+            id,
+            title,
+            image,
+            price,
+            quantity,
+          },
+        ],
+      };
+      localStorage.setItem("carts", JSON.stringify(newCartItems));
+      alert("Added!");
+    }
   }
 
   return (
@@ -53,25 +104,26 @@ export default function BuyOptions({ stock }) {
           marginRight: "1rem",
         }}
         onClick={() => {
-          alert("Added!");
+          cartHandler();
         }}
       >
         Add To Cart
       </button>
-      <a href="/cart">
-        <button
-          style={{
-            backgroundColor: "#FFA41C",
-            borderColor: "#FFA41C",
-            padding: "0.8rem 3rem",
-            borderRadius: "2rem",
-            fontSize: "1.2rem",
-            marginRight: "1rem",
-          }}
-        >
-          Buy Now
-        </button>
-      </a>
+      <button
+        onClick={() => {
+          buyHandler(id, title, image, price, quantity);
+        }}
+        style={{
+          backgroundColor: "#FFA41C",
+          borderColor: "#FFA41C",
+          padding: "0.8rem 3rem",
+          borderRadius: "2rem",
+          fontSize: "1.2rem",
+          marginRight: "1rem",
+        }}
+      >
+        Buy Now
+      </button>
     </div>
   );
 }
