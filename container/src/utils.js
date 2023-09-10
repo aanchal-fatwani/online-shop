@@ -41,3 +41,13 @@ export function checkLoggedInState() {
   if (localStorage && localStorage.user) return true;
   return false;
 }
+
+export function getCartItems(user = "") {
+  let items = [];
+  if (localStorage) {
+    items = localStorage.getItem("carts");
+    items = JSON.parse(items);
+    items = items[user];
+  }
+  return items;
+}
