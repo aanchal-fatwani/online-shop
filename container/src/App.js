@@ -7,6 +7,8 @@ const Products = lazy(() => import("./remote_modules/products"));
 import Help from "./components/Help";
 import ContactUs from "./components/ContactUs";
 import Cart from "./components/Cart";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 const App = () => {
   return (
@@ -22,8 +24,10 @@ const App = () => {
         >
           <Routes>
             <Route path="/help" element={<Help />} />
-            <Route path="/contact-us" element={<ContactUs />} />
+            <Route path="/contact-us" exact element={<ContactUs />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
             <Route path="/category/:category" element={<Categories />} />
             <Route path="/product/:productId" element={<Products />} />
             <Route path="/" exact element={<Dashboard />} />
