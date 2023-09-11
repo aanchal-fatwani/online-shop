@@ -5,7 +5,7 @@ import "../index.css";
 export default function Dashboard() {
   return (
     <div style={{ backgroundColor: "#f1f3f4", padding: "1.5rem 5rem" }}>
-      <div style={{ width: "90rem" }}>
+      <div style={{ width: "88rem", margin: "0 4rem" }}>
         <ImageSlider />
       </div>
       <div

@@ -14,7 +14,7 @@ export default function ImageSlider() {
   };
   const images = [
     {
-      img: "https://i.dummyjson.com/data/products/4/1.jpg",
+      img: "https://i.dummyjson.com/data/products/2/2.jpg",
       category: "smartphones",
     },
     {
@@ -37,6 +37,10 @@ export default function ImageSlider() {
       img: "https://i.dummyjson.com/data/products/26/1.jpg",
       category: "home-decoration",
     },
+    {
+      img: "https://i.dummyjson.com/data/products/66/1.jpg",
+      category: "women-watches",
+    },
   ];
   const [imgArr, setImgArr] = useState([]);
   useEffect(() => {
@@ -45,7 +49,7 @@ export default function ImageSlider() {
         <div>
           <a href={"/category/" + el.category}>
             <img
-              style={{ width: "40rem", height: "18rem", padding: "1rem" }}
+              style={{ width: "36rem", height: "18rem", padding: "1rem" }}
               src={el.img}
             />
           </a>
