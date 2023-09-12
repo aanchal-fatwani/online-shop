@@ -1,59 +1,74 @@
 import React, { useState, useEffect } from "react";
+import { checkLoggedInState } from "../utils.js";
 
 export default function Cart() {
   const [products, setProducts] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
-  const user = "1234567890";
+  const user = localStorage.user && JSON.parse(localStorage.user);
+
   useEffect(() => {
     let items = localStorage && localStorage.getItem("carts");
-    if (items) {
+    if (user && items) {
       items = JSON.parse(items);
       items = items[user];
       console.log(items);
       let orderTotal = 0,
         qtyTotal = 0;
-      setProducts(
-        items.map((item) => {
-          const { title, price, image, id, quantity } = item;
-          orderTotal += price * quantity;
-          qtyTotal += parseInt(quantity);
-          return (
-            <a
-              href={`/product/${id}`}
-              style={{ color: "black", textDecoration: "none" }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  margin: "1rem",
-                }}
+      items &&
+        setProducts(
+          items.map((item) => {
+            const { title, price, image, id, quantity } = item;
+            orderTotal += price * quantity;
+            qtyTotal += parseInt(quantity);
+            return (
+              <a
+                href={`/product/${id}`}
+                style={{ color: "black", textDecoration: "none" }}
               >
-                <img
-                  src={image}
+                <div
                   style={{
-                    height: "8rem",
-                    width: "8rem",
-                    margin: "0 1rem 1rem 0",
+                    display: "flex",
+                    flexDirection: "row",
+                    margin: "1rem",
                   }}
-                />
-                <div style={{ display: "flex", flexDirection: "column" }}>
-                  <h5>
-                    {title} (x{quantity})
-                  </h5>
-                  <h3>Rs. {price}</h3>
-                  {/* {price * quantity} */}
+                >
+                  <img
+                    src={image}
+                    style={{
+                      height: "8rem",
+                      width: "8rem",
+                      margin: "0 1rem 1rem 0",
+                    }}
+                  />
+                  <div style={{ display: "flex", flexDirection: "column" }}>
+                    <h5>
+                      {title} (x{quantity})
+                    </h5>
+                    <h3>Rs. {price}</h3>
+                    {/* {price * quantity} */}
+                  </div>
                 </div>
-              </div>
-            </a>
-          );
-        })
-      );
+              </a>
+            );
+          })
+        );
       setTotalPrice(orderTotal);
       setTotalItems(qtyTotal);
     }
   }, []);
+
+  function buyHandler() {
+    if (localStorage) {
+      let user = JSON.parse(localStorage.user);
+      let carts = JSON.parse(localStorage.carts);
+      delete carts[user];
+      localStorage.carts = JSON.stringify(carts);
+    }
+    alert("Congratulations!! Order Placed..");
+    location.reload();
+  }
+
   return (
     <div style={{ display: "flex", justifyContent: "center", margin: "4rem" }}>
       <div
@@ -78,7 +93,7 @@ export default function Cart() {
                 marginRight: "1rem",
               }}
               onClick={() => {
-                alert("Congratulations!! Order Placed..");
+                buyHandler();
               }}
             >
               Buy Now
@@ -102,39 +117,43 @@ export default function Cart() {
                 Shop top deals
               </a>
             </div>
-            <div style={{ margin: "0 -5rem", padding: "3rem 0" }}>
-              <a href="/login">
-                <button
-                  style={{
-                    padding: "0.5rem 2rem",
-                    borderRadius: "1rem",
-                    backgroundColor: "#F2C200",
-                    borderColor: "#F2C200",
-                    fontSize: "1.5rem",
-                    margin: "0 1rem",
-                    cursor: "pointer",
-                  }}
-                >
-                  Sign in to your account
-                </button>
-              </a>
-            </div>
-            <div>
-              <a href="/register">
-                <button
-                  style={{
-                    padding: "0.5rem 2rem",
-                    borderRadius: "1rem",
-                    backgroundColor: "#F2C200",
-                    borderColor: "#F2C200",
-                    fontSize: "1.5rem",
-                    cursor: "pointer",
-                  }}
-                >
-                  Sign up
-                </button>
-              </a>
-            </div>
+            {!checkLoggedInState() && (
+              <>
+                <div style={{ margin: "0 -5rem", padding: "3rem 0" }}>
+                  <a href="/login">
+                    <button
+                      style={{
+                        padding: "0.5rem 2rem",
+                        borderRadius: "1rem",
+                        backgroundColor: "#F2C200",
+                        borderColor: "#F2C200",
+                        fontSize: "1.5rem",
+                        margin: "0 1rem",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Sign in to your account
+                    </button>
+                  </a>
+                </div>
+                <div>
+                  <a href="/register">
+                    <button
+                      style={{
+                        padding: "0.5rem 2rem",
+                        borderRadius: "1rem",
+                        backgroundColor: "#F2C200",
+                        borderColor: "#F2C200",
+                        fontSize: "1.5rem",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Sign up
+                    </button>
+                  </a>
+                </div>
+              </>
+            )}
           </div>
         )}
       </div>
