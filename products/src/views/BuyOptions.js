@@ -18,6 +18,10 @@ export default function BuyOptions({ id, title, image, price, stock }) {
   // function buyHandler(id, title, image, price, quantity) {
   function buyHandler() {
     if (localStorage) {
+      if(!localStorage.user){
+        location.href = '/login'
+        return
+      }
       let cartItems = [];
       let user = JSON.parse(localStorage.user);
       if (localStorage.carts && localStorage.carts.length) {
@@ -43,6 +47,10 @@ export default function BuyOptions({ id, title, image, price, stock }) {
 
   function cartHandler() {
     if (localStorage) {
+      if(!localStorage.user){
+        location.href = '/login'
+        return
+      }
       let cartItems = [];
       let user = JSON.parse(localStorage.user);
       if (localStorage.carts && localStorage.carts.length) {

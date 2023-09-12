@@ -23,9 +23,9 @@ export function loginUser(mobile, newUser = false) {
   if (localStorage) {
     let allUsers;
     if (!newUser) {
-      allUsers = JSON.parse(localStorage["allUsers"]);
+      allUsers = localStorage["allUsers"] && JSON.parse(localStorage["allUsers"]);
     }
-    if (!allUsers[mobile]) {
+    if (allUsers && !allUsers[mobile]) {
       alert("User does not exist.. Sign-up first or try again!");
     } else {
       localStorage.setItem("user", JSON.stringify(mobile));
