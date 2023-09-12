@@ -127,7 +127,7 @@ export default function BuyOptions({ id, title, image, price, stock }) {
           padding: "0.8rem 3rem",
           borderRadius: "2rem",
           fontSize: "1.2rem",
-          marginRight: "1rem",
+          margin: "0 1rem 5rem",
         }}
       >
         Buy Now

@@ -25,7 +25,7 @@ export default function ProductCard({ details }) {
           }}
         />
       </a>
-      <div style={{ fontSize: "1.5rem" }}>
+      <div style={{ fontSize: "1.5rem", maxWidth: "16rem" }}>
         <a href={`/product/${id}`}>
           <b>{title}</b>
         </a>
