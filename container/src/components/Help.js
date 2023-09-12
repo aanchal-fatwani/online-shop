@@ -50,9 +50,9 @@ const Help = () => {
     <div
       style={{
         // height: "calc(100vh - 140px)"
-        backgroundColor: "rgb(227, 227, 227)",
-        width: "850px",
-        margin: "0 25rem",
+        backgroundColor: "rgb(227 227 227)",
+        width: "44rem",
+        margin: "0 30rem",
       }}
     >
       <h1 className="faq-head">Frequently Asked Questions</h1>
