@@ -31,16 +31,19 @@ export default function Cart() {
                     display: "flex",
                     flexDirection: "row",
                     margin: "1rem",
+                    width: "25rem"
                   }}
                 >
-                  <img
-                    src={image}
-                    style={{
-                      height: "8rem",
-                      width: "8rem",
-                      margin: "0 1rem 1rem 0",
-                    }}
-                  />
+                  <div>
+                    <img
+                      src={image}
+                      style={{
+                        height: "8rem",
+                        width: "8rem",
+                        margin: "0 1rem 1rem 0",
+                      }}
+                    />
+                  </div>
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <h5>
                       {title} (x{quantity})
