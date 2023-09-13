@@ -18,9 +18,9 @@ export default function BuyOptions({ id, title, image, price, stock }) {
   // function buyHandler(id, title, image, price, quantity) {
   function buyHandler() {
     if (localStorage) {
-      if(!localStorage.user){
-        location.href = '/login'
-        return
+      if (!localStorage.user) {
+        location.href = "/login";
+        return;
       }
       let cartItems = [];
       let user = JSON.parse(localStorage.user);
@@ -47,9 +47,9 @@ export default function BuyOptions({ id, title, image, price, stock }) {
 
   function cartHandler() {
     if (localStorage) {
-      if(!localStorage.user){
-        location.href = '/login'
-        return
+      if (!localStorage.user) {
+        location.href = "/login";
+        return;
       }
       let cartItems = [];
       let user = JSON.parse(localStorage.user);
@@ -77,9 +77,11 @@ export default function BuyOptions({ id, title, image, price, stock }) {
   return (
     <div style={{ margin: "2rem 0" }}>
       <div style={{ color: "#007600" }}>In Stock</div>
-      <div style={{ color: "#565959", fontSize: "1rem", margin: "0 0" }}>
-        Hurry.. Only {updatedStock} Left
-      </div>
+      {updatedStock > 0 && (
+        <div style={{ color: "#565959", fontSize: "1rem", margin: "0 0" }}>
+          Hurry.. Only {updatedStock} Left
+        </div>
+      )}
       <div
         style={{
           fontSize: "1.5rem",

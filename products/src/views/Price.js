@@ -23,17 +23,23 @@ export default function Price({ price, discountPercentage }) {
       <span style={{ color: "#CC0C39", fontSize: "2rem" }}>
         - {discountPercentage} %
       </span>
-      <span style={{ fontSize: "2rem" }}>
-        {"   "}
-        Rs.
-        {price}
-      </span>
-      <div style={{ color: "#565959", fontSize: "1.2rem", margin: "1rem 0" }}>
-        M.R.P.:{" "}
-        <span style={{ textDecoration: "line-through" }}>
-          Rs.{parseInt(getOrgPrice())}
-        </span>
-      </div>
+      {price && (
+        <>
+          <span style={{ fontSize: "2rem" }}>
+            {"   "}
+            Rs.
+            {price}
+          </span>
+          <div
+            style={{ color: "#565959", fontSize: "1.2rem", margin: "1rem 0" }}
+          >
+            M.R.P.:{" "}
+            <span style={{ textDecoration: "line-through" }}>
+              Rs.{parseInt(getOrgPrice())}
+            </span>
+          </div>
+        </>
+      )}
     </div>
   );
 }
