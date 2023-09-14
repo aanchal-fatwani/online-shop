@@ -12,7 +12,7 @@ export function addNewUser(name, mobile, email, password) {
     currentUsers[mobile] = userDetails;
 
     localStorage.setItem("allUsers", JSON.stringify(currentUsers));
-    alert("User added");
+    alert("User Added!");
     loginUser(mobile, true);
   } else {
     alert("Some issue occurred!");
@@ -28,7 +28,7 @@ export function loginUser(mobile, newUser = false) {
     if (allUsers && !allUsers[mobile]) {
       alert("User does not exist.. Sign-up first or try again!");
     } else {
-      localStorage.setItem("user", JSON.stringify(mobile));
+      localStorage.setItem("user", JSON.stringify(parseInt(mobile)));
       alert("You have successfully logged in!");
       window.location.href = "/";
     }

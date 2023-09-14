@@ -22,13 +22,17 @@ export default function ImageSlider() {
       category: "laptops",
     },
     {
-      img: "https://i.dummyjson.com/data/products/13/1.jpg",
-      category: "fragrances",
+      img: "https://i.dummyjson.com/data/products/55/thumbnail.jpg",
+      category: "mens-shirts",
     },
-    {
-      img: "https://i.dummyjson.com/data/products/16/4.jpg",
-      category: "skincare",
-    },
+    // {
+    //   img: "https://i.dummyjson.com/data/products/13/1.jpg",
+    //   category: "fragrances",
+    // },
+    // {
+    //   img: "https://i.dummyjson.com/data/products/16/4.jpg",
+    //   category: "skincare",
+    // },
     // {
     //   img: "https://i.dummyjson.com/data/products/22/1.jpg",
     //   category: "groceries",

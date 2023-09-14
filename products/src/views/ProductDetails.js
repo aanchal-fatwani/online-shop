@@ -17,7 +17,7 @@ export default function ProductDetails({ details }) {
     images,
   } = details;
   return (
-    <div style={{ margin: "4rem" }}>
+    <div style={{ padding: "4rem" }}>
       <div
         style={{
           color: "#007185",
@@ -33,7 +33,7 @@ export default function ProductDetails({ details }) {
       </div>
       <Price price={price && price * 10} discountPercentage={discountPercentage} />
       <div>{description}</div>
-      <BuyOptions id={id} title={title} image={images?.[0]} price={price} stock={stock} />
+      <BuyOptions id={id} title={title} image={images?.[0]} price={price && price * 10} stock={stock} />
     </div>
   );
 }

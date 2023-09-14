@@ -24,9 +24,11 @@ export default function BuyOptions({ id, title, image, price, stock }) {
       }
       let cartItems = [];
       let user = JSON.parse(localStorage.user);
-      if (localStorage.carts && localStorage.carts.length) {
-        cartItems = JSON.parse(localStorage.carts);
-        cartItems = cartItems[user];
+      let carts = localStorage.carts && JSON.parse(localStorage.carts);
+      if (carts) {
+        // cartItems = JSON.parse(localStorage.carts);
+        cartItems = carts[user];
+        cartItems = cartItems.length ? [...cartItems] : [];
       }
       let newCartItems = {
         [user]: [
@@ -53,9 +55,11 @@ export default function BuyOptions({ id, title, image, price, stock }) {
       }
       let cartItems = [];
       let user = JSON.parse(localStorage.user);
-      if (localStorage.carts && localStorage.carts.length) {
-        cartItems = JSON.parse(localStorage.carts);
-        cartItems = cartItems[user];
+      let carts = localStorage.carts && JSON.parse(localStorage.carts);
+      if (carts) {
+        // cartItems = JSON.parse(localStorage.carts);
+        cartItems = carts[user];
+        cartItems = cartItems.length ? [...cartItems] : [];
       }
       let newCartItems = {
         [user]: [
