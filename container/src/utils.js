@@ -51,3 +51,63 @@ export function getCartItems(user = "") {
   }
   return items;
 }
+
+export function buyHandler(id, title, image, price, quantity) {
+    if (localStorage) {
+      if (!localStorage.user) {
+        location.href = "/login";
+        return;
+      }
+      let cartItems = [];
+      let user = JSON.parse(localStorage.user);
+      let carts = localStorage.carts && JSON.parse(localStorage.carts);
+      if (carts) {
+        cartItems = carts[user];
+        cartItems = cartItems && cartItems.length ? [...cartItems] : [];
+      }
+      let newCartItems = {
+        [user]: [
+          ...cartItems,
+          {
+            id,
+            title,
+            image,
+            price,
+            quantity,
+          },
+        ],
+      };
+      localStorage.setItem("carts", JSON.stringify(newCartItems));
+    }
+    window.location.href = "/cart";
+  }
+
+  export function cartHandler(id, title, image, price, quantity) {
+    if (localStorage) {
+      if (!localStorage.user) {
+        location.href = "/login";
+        return;
+      }
+      let cartItems = [];
+      let user = JSON.parse(localStorage.user);
+      let carts = localStorage.carts && JSON.parse(localStorage.carts);
+      if (carts) {
+        cartItems = carts[user];
+        cartItems = cartItems && cartItems.length ? [...cartItems] : [];
+      }
+      let newCartItems = {
+        [user]: [
+          ...cartItems,
+          {
+            id,
+            title,
+            image,
+            price,
+            quantity,
+          },
+        ],
+      };
+      localStorage.setItem("carts", JSON.stringify(newCartItems));
+      alert("Added!");
+    }
+  }

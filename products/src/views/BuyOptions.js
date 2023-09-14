@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default function BuyOptions({ id, title, image, price, stock }) {
+export default function BuyOptions({ utils, id, title, image, price, stock }) {
   const [orgStock, setOrgStock] = useState(stock);
   const [updatedStock, setUpdatedStock] = useState(stock);
   const [quantity, setQuantity] = useState(1);
@@ -13,69 +13,6 @@ export default function BuyOptions({ id, title, image, price, stock }) {
     setQuantity(e.target.value);
     let newValue = orgStock - e.target.value;
     setUpdatedStock(newValue);
-  }
-
-  // function buyHandler(id, title, image, price, quantity) {
-  function buyHandler() {
-    if (localStorage) {
-      if (!localStorage.user) {
-        location.href = "/login";
-        return;
-      }
-      let cartItems = [];
-      let user = JSON.parse(localStorage.user);
-      let carts = localStorage.carts && JSON.parse(localStorage.carts);
-      if (carts) {
-        // cartItems = JSON.parse(localStorage.carts);
-        cartItems = carts[user];
-        cartItems = cartItems.length ? [...cartItems] : [];
-      }
-      let newCartItems = {
-        [user]: [
-          ...cartItems,
-          {
-            id,
-            title,
-            image,
-            price,
-            quantity,
-          },
-        ],
-      };
-      localStorage.setItem("carts", JSON.stringify(newCartItems));
-    }
-    window.location.href = "/cart";
-  }
-
-  function cartHandler() {
-    if (localStorage) {
-      if (!localStorage.user) {
-        location.href = "/login";
-        return;
-      }
-      let cartItems = [];
-      let user = JSON.parse(localStorage.user);
-      let carts = localStorage.carts && JSON.parse(localStorage.carts);
-      if (carts) {
-        // cartItems = JSON.parse(localStorage.carts);
-        cartItems = carts[user];
-        cartItems = cartItems.length ? [...cartItems] : [];
-      }
-      let newCartItems = {
-        [user]: [
-          ...cartItems,
-          {
-            id,
-            title,
-            image,
-            price,
-            quantity,
-          },
-        ],
-      };
-      localStorage.setItem("carts", JSON.stringify(newCartItems));
-      alert("Added!");
-    }
   }
 
   return (
@@ -118,14 +55,14 @@ export default function BuyOptions({ id, title, image, price, stock }) {
           marginRight: "1rem",
         }}
         onClick={() => {
-          cartHandler();
+          utils.cartHandler(id, title, image, price, quantity);
         }}
       >
         Add To Cart
       </button>
       <button
         onClick={() => {
-          buyHandler(id, title, image, price, quantity);
+          utils.buyHandler(id, title, image, price, quantity);
         }}
         style={{
           backgroundColor: "#FFA41C",

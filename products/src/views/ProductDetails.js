@@ -3,8 +3,7 @@ import Rating from "@mui/material/Rating";
 import Price from "./Price";
 import BuyOptions from "./BuyOptions";
 
-export default function ProductDetails({ details }) {
-  console.log(details);
+export default function ProductDetails({ details, utils }) {
   const {
     id,
     brand,
@@ -33,7 +32,7 @@ export default function ProductDetails({ details }) {
       </div>
       <Price price={price && price * 10} discountPercentage={discountPercentage} />
       <div>{description}</div>
-      <BuyOptions id={id} title={title} image={images?.[0]} price={price && price * 10} stock={stock} />
+      <BuyOptions id={id} title={title} image={images?.[0]} price={price && price * 10} stock={stock} utils={utils} />
     </div>
   );
 }
