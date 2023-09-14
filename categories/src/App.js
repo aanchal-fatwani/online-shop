@@ -35,7 +35,7 @@ const App = ({ routeParams }) => {
 
   return (
     <div>
-      <h1 style={{ fontSize: "2.5rem", margin: "2.5rem 1rem 2rem 2.5rem" }}>
+      <h1 style={{ fontSize: "2.5rem", margin: "1.5rem 1rem 1rem 3.5rem" }}>
         {unslugify(category)}
       </h1>
       {products && (
