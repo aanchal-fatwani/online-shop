@@ -73,7 +73,7 @@ export default function Cart() {
   }
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", margin: "4rem" }}>
+    <div style={{ display: "flex", justifyContent: "center", padding: "4rem" }}>
       <div
         style={{
           display: "flex",
