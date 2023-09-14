@@ -6,7 +6,6 @@ const Categories = () => {
   const ref = useRef(null);
   const navigate = useNavigate();
   let routeParams = useParams();
-  console.log(routeParams.category)
 
   useEffect(() => {
     mount(ref.current, navigate, routeParams);
