@@ -21,7 +21,6 @@ const App = ({ navigate }) => {
   const [open, setOpen] = React.useState(false);
 
   const searchInputHandler = (e) => {
-    console.log(e.target.value);
     setSearchItem(e.target.value);
   };
 
@@ -128,7 +127,6 @@ const App = ({ navigate }) => {
           }}
           onChange={(e) => searchInputHandler(e)}
           onKeyDown={(ev) => {
-            console.log(`Pressed keyCode ${ev.key}`);
             if (ev.key === "Enter") {
               ev.preventDefault();
               searchHandler();

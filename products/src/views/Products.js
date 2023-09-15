@@ -5,12 +5,10 @@ import ProductDetails from "./ProductDetails";
 
 export default function Products({ routeParams, utils }) {
   const { productId } = routeParams;
-  console.log(productId);
   const [productDetails, setProductDetails] = useState({});
 
   useEffect(() => {
     getProductDetails(productId).then((res) => {
-      console.log(res);
       setProductDetails(res);
     });
   }, []);

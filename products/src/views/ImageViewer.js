@@ -4,16 +4,12 @@ function ImageViewer({ images }) {
   const [currImg, setCurrImg] = useState("");
 
   function hoverHandler(ev, id) {
-    console.log(id);
     setCurrImg(id);
-    console.log(ev.target);
     ev.target.style.boxShadow = "0 0 0 5px #91dce9";
   }
 
   function outHandler(ev, id) {
-    console.log(id);
     setCurrImg(id);
-    console.log(ev.target);
     ev.target.style.boxShadow = "";
   }
 

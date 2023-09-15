@@ -12,7 +12,6 @@ export default function Cart() {
     if (user && items) {
       items = JSON.parse(items);
       items = items[user];
-      console.log(items);
       let orderTotal = 0,
         qtyTotal = 0;
       items &&
