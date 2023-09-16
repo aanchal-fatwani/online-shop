@@ -3,14 +3,21 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const { merge } = require("webpack-merge");
 const commonConfig = require("./webpack.common");
 const packageJson = require("../package.json");
+const dotenv = require("dotenv");
+
 const deps = packageJson.dependencies;
 
-const devConfig = {
-  mode: "development",
+dotenv.config({ path: "./config.env" });
+
+const domain = process.env.PROD_DOMAIN;
+
+const prodConfig = {
+  mode: "production",
   entry: "./src/index.js",
 
   output: {
-    publicPath: "http://localhost:3000/",
+    filename: "[name].[contenthash].js",
+    publicPath: `${domain}`,
   },
   devServer: {
     port: 3000,
@@ -41,4 +48,4 @@ const devConfig = {
     }),
   ],
 };
-module.exports = merge(commonConfig, devConfig);
+module.exports = merge(commonConfig, prodConfig);
