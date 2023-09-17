@@ -1,5 +1,6 @@
 export function addNewUser(name, mobile, email, password) {
   if (localStorage) {
+    password = btoa(password);
     let userDetails = {
       name,
       mobile,
