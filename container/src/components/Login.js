@@ -13,8 +13,8 @@ const Login = () => {
     //   return;
     // }
     // setEmail("");
-    if (!mobile) {
-      alert("Please enter your mobile for login!");
+    if (!mobile || !/[7-9][0-9]{9}/.test(parseInt(mobile))) {
+      alert("Please enter a valid mobile number for login!");
       return;
     }
     loginUser(mobile);
@@ -28,8 +28,9 @@ const Login = () => {
         <div className="form">
           <label>Enter mobile</label>
           <input
-            type="number"
+            type="text"
             value={mobile}
+            maxLength="10"
             onChange={(e) => setMobile(e.target.value)}
           />
           {/* <label>Enter email</label>
