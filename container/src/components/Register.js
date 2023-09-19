@@ -14,6 +14,14 @@ const Register = () => {
       alert("Please enter required details!");
       return;
     }
+    if (!(/[7-9][0-9]{9}/.test(parseInt(mobile)))) {
+      alert("Please enter valid mobile number!");
+      return;
+    }
+    if (!(/.{8,}/.test(parseInt(password)))) {
+      alert("The minimum password length is 8!");
+      return;
+    }
     addNewUser(name, mobile, email, password);
     setName("");
     setMobile("");
@@ -34,7 +42,8 @@ const Register = () => {
           />
           <label>Mobile number</label>
           <input
-            type="number"
+            type="text"
+            maxLength="10"
             value={mobile}
             onChange={(e) => setMobile(e.target.value)}
           />
