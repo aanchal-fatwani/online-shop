@@ -66,6 +66,12 @@ export function buyHandler(id, title, image, price, quantity) {
         cartItems = carts[user];
         cartItems = cartItems && cartItems.length ? [...cartItems] : [];
       }
+      let qty;
+      if(cartItems.length !== 0 && cartItems.filter(el=>el.id==id)?.length > 0){
+        qty = cartItems.filter(el=>el.id==id)[0].quantity; 
+        cartItems = cartItems.filter(el=>el.id!=id) 
+      }
+      quantity += qty;
       let newCartItems = {
         [user]: [
           ...cartItems,
@@ -96,6 +102,12 @@ export function buyHandler(id, title, image, price, quantity) {
         cartItems = carts[user];
         cartItems = cartItems && cartItems.length ? [...cartItems] : [];
       }
+      let qty;
+      if(cartItems.length !== 0 && cartItems.filter(el=>el.id==id)?.length > 0){
+        qty = cartItems.filter(el=>el.id==id)[0].quantity; 
+        cartItems = cartItems.filter(el=>el.id!=id) 
+      }
+      quantity += qty;
       let newCartItems = {
         [user]: [
           ...cartItems,
