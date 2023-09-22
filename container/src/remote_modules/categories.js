@@ -11,9 +11,7 @@ const Categories = () => {
     mount(ref.current, navigate, routeParams);
   }, []);
 
-  return (
-    <div ref={ref}></div>
-  );
+  return <div ref={ref}></div>;
 };
 
 export default Categories;

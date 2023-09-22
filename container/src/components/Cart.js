@@ -30,7 +30,7 @@ export default function Cart() {
                     display: "flex",
                     flexDirection: "row",
                     margin: "1rem",
-                    width: "25rem"
+                    width: "25rem",
                   }}
                 >
                   <div>

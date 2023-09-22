@@ -24,7 +24,8 @@ export function loginUser(mobile, newUser = false) {
   if (localStorage) {
     let allUsers;
     if (!newUser) {
-      allUsers = localStorage["allUsers"] && JSON.parse(localStorage["allUsers"]);
+      allUsers =
+        localStorage["allUsers"] && JSON.parse(localStorage["allUsers"]);
     }
     if (allUsers && !allUsers[mobile]) {
       alert("User does not exist.. Sign-up first or try again!");
@@ -54,73 +55,79 @@ export function getCartItems(user = "") {
 }
 
 export function buyHandler(id, title, image, price, quantity) {
-    if (localStorage) {
-      if (!localStorage.user) {
-        location.href = "/login";
-        return;
-      }
-      let cartItems = [];
-      let user = JSON.parse(localStorage.user);
-      let carts = localStorage.carts && JSON.parse(localStorage.carts);
-      if (carts) {
-        cartItems = carts[user];
-        cartItems = cartItems && cartItems.length ? [...cartItems] : [];
-      }
-      let qty;
-      if(cartItems.length !== 0 && cartItems.filter(el=>el.id==id)?.length > 0){
-        qty = cartItems.filter(el=>el.id==id)[0].quantity; 
-        cartItems = cartItems.filter(el=>el.id!=id) 
-      }
-      quantity += qty;
-      let newCartItems = {
-        [user]: [
-          ...cartItems,
-          {
-            id,
-            title,
-            image,
-            price,
-            quantity,
-          },
-        ],
-      };
-      localStorage.setItem("carts", JSON.stringify(newCartItems));
+  if (localStorage) {
+    if (!localStorage.user) {
+      location.href = "/login";
+      return;
     }
-    window.location.href = "/cart";
+    let cartItems = [];
+    let user = JSON.parse(localStorage.user);
+    let carts = localStorage.carts && JSON.parse(localStorage.carts);
+    if (carts) {
+      cartItems = carts[user];
+      cartItems = cartItems && cartItems.length ? [...cartItems] : [];
+    }
+    let qty;
+    if (
+      cartItems.length !== 0 &&
+      cartItems.filter((el) => el.id == id)?.length > 0
+    ) {
+      qty = cartItems.filter((el) => el.id == id)[0].quantity;
+      cartItems = cartItems.filter((el) => el.id != id);
+    }
+    quantity += qty;
+    let newCartItems = {
+      [user]: [
+        ...cartItems,
+        {
+          id,
+          title,
+          image,
+          price,
+          quantity,
+        },
+      ],
+    };
+    localStorage.setItem("carts", JSON.stringify(newCartItems));
   }
+  window.location.href = "/cart";
+}
 
-  export function cartHandler(id, title, image, price, quantity) {
-    if (localStorage) {
-      if (!localStorage.user) {
-        location.href = "/login";
-        return;
-      }
-      let cartItems = [];
-      let user = JSON.parse(localStorage.user);
-      let carts = localStorage.carts && JSON.parse(localStorage.carts);
-      if (carts) {
-        cartItems = carts[user];
-        cartItems = cartItems && cartItems.length ? [...cartItems] : [];
-      }
-      let qty;
-      if(cartItems.length !== 0 && cartItems.filter(el=>el.id==id)?.length > 0){
-        qty = cartItems.filter(el=>el.id==id)[0].quantity; 
-        cartItems = cartItems.filter(el=>el.id!=id) 
-      }
-      quantity += qty;
-      let newCartItems = {
-        [user]: [
-          ...cartItems,
-          {
-            id,
-            title,
-            image,
-            price,
-            quantity,
-          },
-        ],
-      };
-      localStorage.setItem("carts", JSON.stringify(newCartItems));
-      alert("Added!");
+export function cartHandler(id, title, image, price, quantity) {
+  if (localStorage) {
+    if (!localStorage.user) {
+      location.href = "/login";
+      return;
     }
+    let cartItems = [];
+    let user = JSON.parse(localStorage.user);
+    let carts = localStorage.carts && JSON.parse(localStorage.carts);
+    if (carts) {
+      cartItems = carts[user];
+      cartItems = cartItems && cartItems.length ? [...cartItems] : [];
+    }
+    let qty;
+    if (
+      cartItems.length !== 0 &&
+      cartItems.filter((el) => el.id == id)?.length > 0
+    ) {
+      qty = cartItems.filter((el) => el.id == id)[0].quantity;
+      cartItems = cartItems.filter((el) => el.id != id);
+    }
+    quantity += qty;
+    let newCartItems = {
+      [user]: [
+        ...cartItems,
+        {
+          id,
+          title,
+          image,
+          price,
+          quantity,
+        },
+      ],
+    };
+    localStorage.setItem("carts", JSON.stringify(newCartItems));
+    alert("Added!");
   }
+}

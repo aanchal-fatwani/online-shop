@@ -14,11 +14,11 @@ const Register = () => {
       alert("Please enter required details!");
       return;
     }
-    if (!(/[7-9][0-9]{9}/.test(parseInt(mobile)))) {
+    if (!/[7-9][0-9]{9}/.test(parseInt(mobile))) {
       alert("Please enter valid mobile number!");
       return;
     }
-    if (!(/.{8,}/.test(parseInt(password)))) {
+    if (!/.{8,}/.test(parseInt(password))) {
       alert("The minimum password length is 8!");
       return;
     }

@@ -10,9 +10,7 @@ const Dashboard = () => {
     mount(ref.current, navigate);
   }, []);
 
-  return (
-    <div ref={ref}></div>
-  );
+  return <div ref={ref}></div>;
 };
 
 export default Dashboard;

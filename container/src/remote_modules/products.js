@@ -7,7 +7,7 @@ const Products = () => {
   const ref = useRef(null);
   const navigate = useNavigate();
   let routeParams = useParams();
-  let utils = {buyHandler, cartHandler}
+  let utils = { buyHandler, cartHandler };
 
   useEffect(() => {
     mount(ref.current, navigate, routeParams, utils);
