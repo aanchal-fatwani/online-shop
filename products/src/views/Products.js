@@ -15,7 +15,7 @@ export default function Products({ routeParams, utils }) {
 
   return (
     <div style={{ display: "flex" }}>
-      <ImageViewer images={productDetails.images?.slice(0,5)} />
+      <ImageViewer images={productDetails.images?.slice(0, 5)} />
       <ProductDetails details={productDetails} utils={utils} />
     </div>
   );

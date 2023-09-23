@@ -30,9 +30,19 @@ export default function ProductDetails({ details, utils }) {
         <span style={{ margin: "0.5rem", verticalAlign: "top" }}>{rating}</span>
         <Rating value={parseInt(rating)} readOnly size="large" />
       </div>
-      <Price price={price && price * 10} discountPercentage={discountPercentage} />
+      <Price
+        price={price && price * 10}
+        discountPercentage={discountPercentage}
+      />
       <div>{description}</div>
-      <BuyOptions id={id} title={title} image={images?.[0]} price={price && price * 10} stock={stock} utils={utils} />
+      <BuyOptions
+        id={id}
+        title={title}
+        image={images?.[0]}
+        price={price && price * 10}
+        stock={stock}
+        utils={utils}
+      />
     </div>
   );
 }
