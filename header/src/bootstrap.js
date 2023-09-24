@@ -8,9 +8,7 @@ const mount = (el, navigate) => {
 
   root.render(
     <BrowserRouter>
-      <App
-        navigate={navigate}
-      />
+      <App navigate={navigate} />
     </BrowserRouter>
   );
 };
