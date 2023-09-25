@@ -12,7 +12,9 @@ import Register from "./components/Register";
 
 const App = () => {
   return (
-    <div style={{ backgroundColor: "white", height: "100%", minHeight: "100vh" }}>
+    <div
+      style={{ backgroundColor: "white", height: "100%", minHeight: "100vh" }}
+    >
       <Header />
       <div>
         <Suspense

@@ -40,8 +40,8 @@ const prodConfig = {
       shared: {
         ...deps,
         react: { requiredVersion: deps.react, singleton: true },
-        'react-dom': {
-          requiredVersion: deps['react-dom'],
+        "react-dom": {
+          requiredVersion: deps["react-dom"],
           singleton: true,
         },
       },
