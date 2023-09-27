@@ -75,7 +75,7 @@ export function buyHandler(id, title, image, price, quantity) {
       qty = cartItems.filter((el) => el.id == id)[0].quantity;
       cartItems = cartItems.filter((el) => el.id != id);
     }
-    quantity += qty;
+    quantity += (qty ? qty : 0);
     let newCartItems = {
       [user]: [
         ...cartItems,
@@ -114,7 +114,7 @@ export function cartHandler(id, title, image, price, quantity) {
       qty = cartItems.filter((el) => el.id == id)[0].quantity;
       cartItems = cartItems.filter((el) => el.id != id);
     }
-    quantity += qty;
+    quantity += (qty ? qty : 0);
     let newCartItems = {
       [user]: [
         ...cartItems,
