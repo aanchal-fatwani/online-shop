@@ -34,13 +34,12 @@ const App = ({ navigate }) => {
 
   const searchHandler = () => {
     let r = allCategories.filter((el) => {
-      let t =
+      return (
         unslugify(el)
           .toLowerCase()
           .replace(" ", "")
-          .indexOf(searchItem.replace(" ", "")) > -1;
-
-      return t;
+          .indexOf(searchItem.replace(" ", "")) > -1
+      );
     });
     if (r.length == 0) {
       setOpen(true);

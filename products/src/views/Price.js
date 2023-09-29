@@ -26,7 +26,6 @@ export default function Price({ price, discountPercentage }) {
       {price && (
         <>
           <span style={{ fontSize: "2rem" }}>
-            {"   "}
             Rs.
             {price}
           </span>
