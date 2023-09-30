@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 
 export default function BuyOptions({ utils, id, title, image, price, stock }) {
-  const [orgStock, setOrgStock] = useState(stock);
+  const [originalStock, setOriginalStock] = useState(stock);
   const [updatedStock, setUpdatedStock] = useState(stock);
   const [quantity, setQuantity] = useState(1);
   useEffect(() => {
-    setOrgStock(stock > 100 ? parseInt(stock / 10) : stock);
+    setOriginalStock(stock > 100 ? parseInt(stock / 10) : stock);
     setUpdatedStock((stock > 100 ? parseInt(stock / 10) : stock) - 1);
   }, [stock]);
 
   function quantityHandler(e) {
     setQuantity(e.target.value);
-    let newValue = orgStock - e.target.value;
+    let newValue = originalStock - e.target.value;
     setUpdatedStock(newValue);
   }
 

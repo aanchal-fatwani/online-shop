@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Price({ price, discountPercentage }) {
-  function getOrgPrice() {
+  function getOriginalPrice() {
     return price / (1 - discountPercentage / 100);
   }
   return (
@@ -17,7 +17,7 @@ export default function Price({ price, discountPercentage }) {
           padding: "1rem",
         }}
       >
-        Rs.{parseInt(getOrgPrice())}
+        Rs.{parseInt(getOriginalPrice())}
       </span>
     </div>
   );
