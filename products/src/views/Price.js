@@ -21,11 +21,12 @@ export default function Price({ price, discountPercentage }) {
         Deal Of The Day
       </span>
       <span style={{ color: "#CC0C39", fontSize: "2rem" }}>
-        - {discountPercentage} %
+        - {discountPercentage}%
       </span>
       {price && (
         <>
           <span style={{ fontSize: "2rem" }}>
+            {" "}
             Rs.
             {price}
           </span>
