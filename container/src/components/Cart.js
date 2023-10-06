@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { checkLoggedInState } from "../utils.js";
+import Delete from "@mui/icons-material/Delete";
 
 export default function Cart() {
   const [products, setProducts] = useState([]);
@@ -45,7 +46,14 @@ export default function Cart() {
                   </div>
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <h5>
-                      {title} (x{quantity})
+                      {title} (x{quantity}){" "}
+                      <Delete
+                        style={{
+                          margin: "0.3rem 3rem -0.1rem 5rem",
+                          fontSize: "1.5rem",
+                          color: "black",
+                        }}
+                      />
                     </h5>
                     <h3>Rs. {price}</h3>
                     {/* {price * quantity} */}
