@@ -18,12 +18,12 @@ export default function ImageSlider() {
       category: "smartphones",
     },
     {
-      img: "https://i.dummyjson.com/data/products/9/1.jpg",
-      category: "laptops",
+      img: "https://i.dummyjson.com/data/products/66/1.jpg",
+      category: "womens-watches",
     },
     {
-      img: "https://i.dummyjson.com/data/products/55/thumbnail.jpg",
-      category: "mens-shirts",
+      img: "https://i.dummyjson.com/data/products/9/1.jpg",
+      category: "laptops",
     },
     // {
     //   img: "https://i.dummyjson.com/data/products/13/1.jpg",
@@ -42,8 +42,8 @@ export default function ImageSlider() {
       category: "home-decoration",
     },
     {
-      img: "https://i.dummyjson.com/data/products/66/1.jpg",
-      category: "women-watches",
+      img: "https://i.dummyjson.com/data/products/55/thumbnail.jpg",
+      category: "mens-shirts",
     },
   ];
   const [imgArr, setImgArr] = useState([]);
