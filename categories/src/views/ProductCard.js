@@ -33,7 +33,7 @@ export default function ProductCard({ details }) {
       <div style={{ color: "#565959", margin: "1rem 0", fontSize: "1.2rem" }}>
         {brand}
       </div>
-      <Price price={price * 10} discountPercentage={discountPercentage} />
+      <Price price={price * 85} discountPercentage={discountPercentage} />
       <div style={{ fontSize: "1.2rem" }}>
         <span style={{ margin: "0.5rem", verticalAlign: "top" }}>{rating}</span>
         <Rating value={parseInt(rating)} readOnly size="medium" />

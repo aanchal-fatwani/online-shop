@@ -32,7 +32,7 @@ export default function ProductDetails({ details, utils }) {
         <Rating value={parseInt(rating)} readOnly size="large" />
       </div>
       <Price
-        price={price && price * 10}
+        price={price && price * 85}
         discountPercentage={discountPercentage}
       />
       <div>{description}</div>
@@ -40,7 +40,7 @@ export default function ProductDetails({ details, utils }) {
         id={id}
         title={title}
         image={images?.[0]}
-        price={price && price * 10}
+        price={price && price * 85}
         stock={stock}
         utils={utils}
       />
