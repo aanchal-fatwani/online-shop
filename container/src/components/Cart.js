@@ -169,22 +169,3 @@ export default function Cart() {
     </div>
   );
 }
-
-let carts = {
-  1234567890: [
-    {
-      id: 1,
-      title: "iPhone 9",
-      image: "https://i.dummyjson.com/data/products/1/1.jpg",
-      price: "5490",
-      quantity: "2",
-    },
-    {
-      id: 2,
-      title: "iPhone X",
-      image: "https://i.dummyjson.com/data/products/2/1.jpg",
-      price: "8990",
-      quantity: "2",
-    },
-  ],
-};
