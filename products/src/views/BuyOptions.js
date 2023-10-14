@@ -18,11 +18,11 @@ export default function BuyOptions({ utils, id, title, image, price, stock }) {
   return (
     <div style={{ margin: "2rem 0" }}>
       {updatedStock > 0 && (
-      <React.Fragment>
-        <div style={{ color: "#007600" }}>In Stock</div>
-        <div style={{ color: "#565959", fontSize: "1rem", margin: "0 0" }}>
-          Hurry.. Only {updatedStock} Left
-        </div>
+        <React.Fragment>
+          <div style={{ color: "#007600" }}>In Stock</div>
+          <div style={{ color: "#565959", fontSize: "1rem", margin: "0 0" }}>
+            Hurry.. Only {updatedStock} Left
+          </div>
         </React.Fragment>
       )}
       <div
