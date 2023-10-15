@@ -15,6 +15,14 @@ export default function BuyOptions({ utils, id, title, image, price, stock }) {
     setUpdatedStock(newValue);
   }
 
+  function quantityHandler() {
+    let qtyOptions = [];
+    for(let i = 0; i < 5; i++){
+      qtyOptions.push(<option value={`${i}`}>{i}</option>)
+    }
+    return qtyOptions;
+  }
+
   return (
     <div style={{ margin: "2rem 0" }}>
       {updatedStock > 0 && (
@@ -40,11 +48,7 @@ export default function BuyOptions({ utils, id, title, image, price, stock }) {
           value={quantity}
           onChange={(e) => quantityHandler(e)}
         >
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
+          {quantityHandler()}
         </select>
       </div>
       <button
