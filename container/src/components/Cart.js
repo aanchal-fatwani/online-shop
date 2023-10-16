@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { checkLoggedInState } from "../utils.js";
 import Delete from "@mui/icons-material/Delete";
 
@@ -7,9 +7,36 @@ export default function Cart() {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
   const user = localStorage.user && JSON.parse(localStorage.user);
+  const carts = localStorage && localStorage.getItem("carts");
+
+  const stateRef = useRef();
+  stateRef.current = totalItems;
+
+  const deleteHandler = (e, id) => {
+    e.preventDefault();
+    let userItems = JSON.parse(carts)[user];
+    let items = userItems;
+    let index;
+    items = items.filter((el, i) => {
+      if (el.id === id) {
+        index = i;
+        return true;
+      }
+    })[0];
+    if (items.quantity == 1) {
+      userItems.splice(index, 1);
+    } else {
+      userItems[index].quantity = userItems[index].quantity - 1;
+    }
+    let newCart = { ...JSON.parse(carts) };
+    newCart[user] = userItems;
+    localStorage.setItem("carts", JSON.stringify(newCart));
+    let totalItms = stateRef.current;
+    setTotalItems(totalItms - 1);
+  };
 
   useEffect(() => {
-    let items = localStorage && localStorage.getItem("carts");
+    let items = carts;
     if (user && items) {
       items = JSON.parse(items);
       items = items[user];
@@ -53,6 +80,7 @@ export default function Cart() {
                         fontSize: "1.5rem",
                         color: "black",
                       }}
+                      onClick={(e) => deleteHandler(e, id)}
                     />
                     <h3>Rs. {price}</h3>
                     {/* {price * quantity} */}
@@ -65,12 +93,12 @@ export default function Cart() {
       setTotalPrice(orderTotal);
       setTotalItems(qtyTotal);
     }
-  }, []);
+  }, [totalItems]);
 
   function buyHandler() {
     if (localStorage) {
-      let user = JSON.parse(localStorage.user);
-      let carts = JSON.parse(localStorage.carts);
+      // let user = JSON.parse(localStorage.user);
+      // let carts = JSON.parse(localStorage.carts);
       delete carts[user];
       localStorage.carts = JSON.stringify(carts);
     }
@@ -169,3 +197,22 @@ export default function Cart() {
     </div>
   );
 }
+
+// let carts = {
+//   1234567890: [
+//     {
+//       id: 1,
+//       title: "iPhone 9",
+//       image: "https://i.dummyjson.com/data/products/1/1.jpg",
+//       price: "5490",
+//       quantity: "2",
+//     },
+//     {
+//       id: 2,
+//       title: "iPhone X",
+//       image: "https://i.dummyjson.com/data/products/2/1.jpg",
+//       price: "8990",
+//       quantity: "2",
+//     },
+//   ],
+// };
