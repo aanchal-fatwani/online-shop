@@ -5,8 +5,9 @@ export default function BuyOptions({ utils, id, title, image, price, stock }) {
   const [updatedStock, setUpdatedStock] = useState(stock);
   const [quantity, setQuantity] = useState(1);
   useEffect(() => {
-    setOriginalStock(stock > 100 ? parseInt(stock / 10) : stock);
-    setUpdatedStock((stock > 100 ? parseInt(stock / 10) : stock) - 1);
+    const stockMarkUp = stock > 100 ? parseInt(stock / 10) : stock;
+    setOriginalStock(stockMarkUp);
+    setUpdatedStock(stockMarkUp - 1);
   }, [stock]);
 
   function quantityHandler(e) {
