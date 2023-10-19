@@ -18,7 +18,7 @@ export default function BuyOptions({ utils, id, title, image, price, stock }) {
 
   function quantityOptions() {
     let qtyOptions = [];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < (stock > 5 ? 5 : stock ); i++) {
       qtyOptions.push(<option value={`${i}`}>{i}</option>);
     }
     return qtyOptions;
