@@ -7,7 +7,7 @@ There is a Container module to define the application and load other MFEs.
 ## Technologies Used
 React v18, Material UI, Webpack v5
 
-## Few screenhsots of the Application:
+## Few screenshots of the Application:
 
 ![image](https://github.com/aanchal-fatwani/online-shop/assets/63228776/46faf82e-e983-477b-a1f9-49cd2224e741)
 <br/>
