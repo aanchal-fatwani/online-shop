@@ -29,7 +29,7 @@ export default function BuyOptions({ utils, id, title, image, price, stock }) {
       {updatedStock > 0 && (
         <React.Fragment>
           <div style={{ color: "#007600" }}>In Stock</div>
-          <div style={{ color: "#565959", fontSize: "1rem", margin: "0 0" }}>
+          <div style={{ color: "#565959", fontSize: "1rem" }}>
             Hurry.. Only {updatedStock} Left
           </div>
         </React.Fragment>
