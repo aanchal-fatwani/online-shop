@@ -15,7 +15,7 @@ export default function ProductDetails({ details, utils }) {
     stock,
     images,
   } = details;
-  
+
   return (
     <div style={{ padding: "4rem" }}>
       <div
