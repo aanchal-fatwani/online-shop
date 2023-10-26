@@ -5,18 +5,15 @@ const Help = () => {
   const faqs = [
     {
       ques: "Returns Policy",
-      ans:
-        "Most items purchased from sellers listed are returnable within the return window, except those that are explicitly identified as not returnable. ",
+      ans: "Most items purchased from sellers listed are returnable within the return window, except those that are explicitly identified as not returnable. ",
     },
     {
       ques: "Cancel Items and Orders",
-      ans:
-        "If your order is combined with other active orders from your account and is shipped as a single shipment (common tracking number), then cancelling one order/item would result in cancellation of all the other orders/items combined in the shipment.",
+      ans: "If your order is combined with other active orders from your account and is shipped as a single shipment (common tracking number), then cancelling one order/item would result in cancellation of all the other orders/items combined in the shipment.",
     },
     {
       ques: "About Pay on Delivery",
-      ans:
-        "Pay on Delivery (POD) includes Cash on Delivery (COD) as well as additional digital payment facilities via UPI / QR Code –Scan & Pay.",
+      ans: "Pay on Delivery (POD) includes Cash on Delivery (COD) as well as additional digital payment facilities via UPI / QR Code –Scan & Pay.",
     },
   ];
 
