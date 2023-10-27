@@ -18,8 +18,7 @@ function ImageViewer({ images }) {
       <div
         style={{ display: "flex", flexDirection: "column", marginTop: "2rem" }}
       >
-        {images &&
-          images.length > 1 &&
+        {images?.length > 1 &&
           images.map((el) => (
             <img
               src={el}
