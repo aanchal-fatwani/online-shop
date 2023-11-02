@@ -4,7 +4,7 @@ export default function BuyOptions({ utils, id, title, image, price, stock }) {
   const [originalStock, setOriginalStock] = useState(stock);
   const [updatedStock, setUpdatedStock] = useState(stock);
   const [quantity, setQuantity] = useState(1);
-  
+
   useEffect(() => {
     const stockMarkedDown = stock > 100 ? parseInt(stock / 10) : stock;
     setOriginalStock(stockMarkedDown);
@@ -23,6 +23,15 @@ export default function BuyOptions({ utils, id, title, image, price, stock }) {
       qtyOptions.push(<option value={`${i}`}>{i}</option>);
     }
     return qtyOptions;
+  }
+
+  let buttonStyles = {
+    backgroundColor: "#FFD814",
+    borderColor: "#FFD814",
+    padding: "0.8rem 3rem",
+    borderRadius: "2rem",
+    fontSize: "1.2rem",
+    marginRight: "1rem",
   }
 
   return (
@@ -55,12 +64,7 @@ export default function BuyOptions({ utils, id, title, image, price, stock }) {
       </div>
       <button
         style={{
-          backgroundColor: "#FFD814",
-          borderColor: "#FFD814",
-          padding: "0.8rem 3rem",
-          borderRadius: "2rem",
-          fontSize: "1.2rem",
-          marginRight: "1rem",
+          ...buttonStyles
         }}
         onClick={() => {
           utils.cartHandler(id, title, image, price, quantity);
@@ -73,11 +77,7 @@ export default function BuyOptions({ utils, id, title, image, price, stock }) {
           utils.buyHandler(id, title, image, price, quantity);
         }}
         style={{
-          backgroundColor: "#FFA41C",
-          borderColor: "#FFA41C",
-          padding: "0.8rem 3rem",
-          borderRadius: "2rem",
-          fontSize: "1.2rem",
+          ...buttonStyles,
           margin: "0 1rem 5rem",
         }}
       >
