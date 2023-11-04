@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
 function ImageViewer({ images }) {
-  const [currImg, setCurrImg] = useState("");
+  const [currentImg, setCurrentImg] = useState("");
 
   function hoverHandler(ev, id) {
-    setCurrImg(id);
+    setCurrentImg(id);
     ev.target.style.boxShadow = "0 0 0 5px #91dce9";
   }
 
   function outHandler(ev, id) {
-    setCurrImg(id);
+    setCurrentImg(id);
     ev.target.style.boxShadow = "";
   }
 
@@ -44,7 +44,7 @@ function ImageViewer({ images }) {
         }}
       >
         <img
-          src={currImg || (images && images[0])}
+          src={currentImg || (images && images[0])}
           style={{ height: "32rem", width: "32rem" }}
         />
       </div>
