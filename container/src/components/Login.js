@@ -32,6 +32,12 @@ const Login = () => {
             value={mobile}
             maxLength="10"
             onChange={(e) => setMobile(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                searchHandler(e);
+              }
+            }}
           />
           {/* <label>Enter email</label>
           <input type="text" onChange={(e) => setEmail(e.target.value)}/> */}
