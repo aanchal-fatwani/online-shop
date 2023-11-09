@@ -36,6 +36,29 @@ export default function Cart() {
     setTotalItems(totalItms - 1);
   };
 
+  const addHandler = (e, id) => {
+    e.preventDefault();
+    let userItems = JSON.parse(carts)[user];
+    let items = userItems;
+    let index;
+    items = items.filter((el, i) => {
+      if (el.id === id) {
+        index = i;
+        return true;
+      }
+    })[0];
+    if (items.quantity == 1) {
+      userItems.splice(index, 1);
+    } else {
+      userItems[index].quantity = userItems[index].quantity + 1;
+    }
+    let newCart = { ...JSON.parse(carts) };
+    newCart[user] = userItems;
+    localStorage.setItem("carts", JSON.stringify(newCart));
+    let totalItms = stateRef.current;
+    setTotalItems(totalItms + 1);
+  };
+
   useEffect(() => {
     let items = carts;
     if (user && items) {
@@ -82,7 +105,7 @@ export default function Cart() {
                           fontSize: "1.5rem",
                           color: "black",
                         }}
-                        onClick={() => {}}
+                        onClick={(e) => addHandler(e, id)}
                       />
                       <Delete
                         style={{
