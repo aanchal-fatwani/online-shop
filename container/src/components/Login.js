@@ -35,7 +35,7 @@ const Login = () => {
             onKeyDown={(e) => {
               if (e.key === "Enter") {
                 e.preventDefault();
-                searchHandler(e);
+                submitHandler(e);
               }
             }}
           />
