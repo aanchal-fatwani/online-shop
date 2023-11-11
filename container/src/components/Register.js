@@ -29,6 +29,13 @@ const Register = () => {
     setPassword("");
   }
 
+  function keyDownHandler(e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      submitHandler(e);
+    }
+  }
+
   return (
     <React.Fragment>
       <div className="card card-reg" id="card">
@@ -39,12 +46,7 @@ const Register = () => {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                e.preventDefault();
-                submitHandler(e);
-              }
-            }}
+            onKeyDown={(e) => keyDownHandler(e)}
           />
           <label>Mobile number</label>
           <input
@@ -52,36 +54,21 @@ const Register = () => {
             maxLength="10"
             value={mobile}
             onChange={(e) => setMobile(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                e.preventDefault();
-                submitHandler(e);
-              }
-            }}
+            onKeyDown={(e) => keyDownHandler(e)}
           />
           <label>Email (optional)</label>
           <input
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                e.preventDefault();
-                submitHandler(e);
-              }
-            }}
+            onKeyDown={(e) => keyDownHandler(e)}
           />
           <label>Password</label>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                e.preventDefault();
-                submitHandler(e);
-              }
-            }}
+            onKeyDown={(e) => keyDownHandler(e)}
           />
           <button
             style={{ cursor: "pointer" }}
