@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { checkLoggedInState } from "../utils.js";
 import Delete from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
+import Tooltip from '@mui/material/Tooltip';
 
 export default function Cart() {
   const [products, setProducts] = useState([]);
@@ -99,14 +100,16 @@ export default function Cart() {
                     <h5>{title}</h5>
                     (x{quantity}){" "}
                     <div style={{ display: "flex", flexDirection: "row" }}>
-                      <AddIcon
-                        style={{
-                          margin: "-1.75rem 0 1rem 10rem",
-                          fontSize: "1.5rem",
-                          color: "black",
-                        }}
-                        onClick={(e) => addHandler(e, id)}
-                      />
+                      <Tooltip title="Add More Quantity">
+                        <AddIcon
+                          style={{
+                            margin: "-1.75rem 0 1rem 10rem",
+                            fontSize: "1.5rem",
+                            color: "black",
+                          }}
+                          onClick={(e) => addHandler(e, id)}
+                        />
+                      </Tooltip>
                       <Delete
                         style={{
                           margin: "-1.75rem 0 1rem 1rem",
