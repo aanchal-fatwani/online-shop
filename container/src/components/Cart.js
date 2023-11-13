@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { checkLoggedInState } from "../utils.js";
 import Delete from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
-import Tooltip from '@mui/material/Tooltip';
+import Tooltip from "@mui/material/Tooltip";
 
 export default function Cart() {
   const [products, setProducts] = useState([]);
@@ -110,14 +110,16 @@ export default function Cart() {
                           onClick={(e) => addHandler(e, id)}
                         />
                       </Tooltip>
-                      <Delete
-                        style={{
-                          margin: "-1.75rem 0 1rem 1rem",
-                          fontSize: "1.5rem",
-                          color: "black",
-                        }}
-                        onClick={(e) => deleteHandler(e, id)}
-                      />
+                      <Tooltip title="Reduce Quantity">
+                        <Delete
+                          style={{
+                            margin: "-1.75rem 0 1rem 1rem",
+                            fontSize: "1.5rem",
+                            color: "black",
+                          }}
+                          onClick={(e) => deleteHandler(e, id)}
+                        />
+                      </Tooltip>
                     </div>
                     <h3>Rs. {price}</h3>
                     {/* {price * quantity} */}
