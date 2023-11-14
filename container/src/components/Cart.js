@@ -100,7 +100,7 @@ export default function Cart() {
                     <h5>{title}</h5>
                     (x{quantity}){" "}
                     <div style={{ display: "flex", flexDirection: "row" }}>
-                      <Tooltip title="Add More Quantity">
+                      <Tooltip title="Add More">
                         <AddIcon
                           style={{
                             margin: "-1.75rem 0 1rem 10rem",
@@ -110,7 +110,7 @@ export default function Cart() {
                           onClick={(e) => addHandler(e, id)}
                         />
                       </Tooltip>
-                      <Tooltip title="Reduce Quantity">
+                      <Tooltip title="Remove">
                         <Delete
                           style={{
                             margin: "-1.75rem 0 1rem 1rem",
