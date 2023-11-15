@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { checkLoggedInState } from "../utils.js";
 import Delete from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
+import Remove from "@mui/icons-material/Remove";
 import Tooltip from "@mui/material/Tooltip";
 
 export default function Cart() {
@@ -110,16 +111,29 @@ export default function Cart() {
                           onClick={(e) => addHandler(e, id)}
                         />
                       </Tooltip>
-                      <Tooltip title="Remove">
-                        <Delete
-                          style={{
-                            margin: "-1.75rem 0 1rem 1rem",
-                            fontSize: "1.5rem",
-                            color: "black",
-                          }}
-                          onClick={(e) => deleteHandler(e, id)}
-                        />
-                      </Tooltip>
+                      {quantity === 1 ? (
+                        <Tooltip title="Remove">
+                          <Delete
+                            style={{
+                              margin: "-1.75rem 0 1rem 1rem",
+                              fontSize: "1.5rem",
+                              color: "black",
+                            }}
+                            onClick={(e) => deleteHandler(e, id)}
+                          />
+                        </Tooltip>
+                      ) : (
+                        <Tooltip title="Reduce">
+                          <Remove
+                            style={{
+                              margin: "-1.75rem 0 1rem 1rem",
+                              fontSize: "1.5rem",
+                              color: "black",
+                            }}
+                            onClick={(e) => deleteHandler(e, id)}
+                          />
+                        </Tooltip>
+                      )}
                     </div>
                     <h3>Rs. {price}</h3>
                     {/* {price * quantity} */}
