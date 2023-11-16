@@ -43,15 +43,13 @@ export default function Cart() {
     let userItems = JSON.parse(carts)[user];
     let items = userItems;
     let index;
-    items = items.filter((el, i) => {
-      if (el.id === id) {
+    for (let i = 0; i < items.length; i++) {
+      if (id === items[i].id) { 
         index = i;
-        return true;
+        break; 
       }
-    })[0];
-
+    }
     userItems[index].quantity = userItems[index].quantity + 1;
-    
     let newCart = { ...JSON.parse(carts) };
     newCart[user] = userItems;
     localStorage.setItem("carts", JSON.stringify(newCart));
