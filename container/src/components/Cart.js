@@ -49,11 +49,9 @@ export default function Cart() {
         return true;
       }
     })[0];
-    if (items.quantity == 1) {
-      userItems.splice(index, 1);
-    } else {
-      userItems[index].quantity = userItems[index].quantity + 1;
-    }
+
+    userItems[index].quantity = userItems[index].quantity + 1;
+    
     let newCart = { ...JSON.parse(carts) };
     newCart[user] = userItems;
     localStorage.setItem("carts", JSON.stringify(newCart));
