@@ -44,9 +44,9 @@ export default function Cart() {
     let items = userItems;
     let index;
     for (let i = 0; i < items.length; i++) {
-      if (id === items[i].id) { 
+      if (id === items[i].id) {
         index = i;
-        break; 
+        break;
       }
     }
     userItems[index].quantity = userItems[index].quantity + 1;
