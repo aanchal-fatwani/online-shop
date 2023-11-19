@@ -97,21 +97,11 @@ export default function Cart() {
                     <h5>{title}</h5>
                     (x{quantity}){" "}
                     <div style={{ display: "flex", flexDirection: "row" }}>
-                      <Tooltip title="Add More">
-                        <AddIcon
-                          style={{
-                            margin: "-1.75rem 0 1rem 10rem",
-                            fontSize: "1.5rem",
-                            color: "black",
-                          }}
-                          onClick={(e) => addHandler(e, id)}
-                        />
-                      </Tooltip>
                       {quantity === 1 ? (
                         <Tooltip title="Remove">
                           <Delete
                             style={{
-                              margin: "-1.75rem 0 1rem 1rem",
+                              margin: "-1.75rem 0 1rem 10rem",
                               fontSize: "1.5rem",
                               color: "black",
                             }}
@@ -122,7 +112,7 @@ export default function Cart() {
                         <Tooltip title="Reduce">
                           <Remove
                             style={{
-                              margin: "-1.75rem 0 1rem 1rem",
+                              margin: "-1.75rem 0 1rem 10rem",
                               fontSize: "1.5rem",
                               color: "black",
                             }}
@@ -130,6 +120,16 @@ export default function Cart() {
                           />
                         </Tooltip>
                       )}
+                      <Tooltip title="Add More">
+                        <AddIcon
+                          style={{
+                            margin: "-1.75rem 0 1rem 1rem",
+                            fontSize: "1.5rem",
+                            color: "black",
+                          }}
+                          onClick={(e) => addHandler(e, id)}
+                        />
+                      </Tooltip>
                     </div>
                     <h3>Rs. {price}</h3>
                     {/* {price * quantity} */}
