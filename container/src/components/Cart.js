@@ -151,7 +151,7 @@ export default function Cart() {
       delete carts[user];
       localStorage.carts = JSON.stringify(carts);
     }
-    alert("Congratulations!! Order Placed..");
+    alert("Congratulations! Order Placed..");
     location.reload();
   }
 
