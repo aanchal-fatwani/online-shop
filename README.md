@@ -31,7 +31,7 @@ React v18, Material UI, Webpack v5
 <br/>
 <br/>
 
-![image](https://github.com/aanchal-fatwani/online-shop/assets/63228776/21ec199c-9f4a-44fa-8c8e-0bd020921377)
+![image](https://github.com/aanchal-fatwani/online-shop/assets/63228776/ff9cee2d-e578-4a6b-8fd3-87447feaf888)
 <br/>
 <br/>
 
