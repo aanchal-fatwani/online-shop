@@ -80,28 +80,28 @@ export default function Cart() {
                     display: "flex",
                     flexDirection: "row",
                     margin: "1rem",
-                    width: "25rem",
+                    width: "35rem",
                   }}
                 >
                   <div>
                     <img
                       src={image}
                       style={{
-                        height: "8rem",
-                        width: "8rem",
+                        height: "10rem",
+                        width: "10rem",
                         margin: "0 1rem 1rem 0",
                       }}
                     />
                   </div>
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <h5>{title}</h5>
-                    (x{quantity}){" "}
-                    <div style={{ display: "flex", flexDirection: "row" }}>
+                    <div style={{ display: "flex", flexDirection: "row", margin: "1rem 0" }}>
+                    <div style={{ minWidth: '10rem', fontSize: '1.75rem', fontWeight: '700'}}>{`Rs. ${price}`}</div>
                       {quantity === 1 ? (
                         <Tooltip title="Remove">
                           <Delete
                             style={{
-                              margin: "-1.75rem 0 1rem 10rem",
+                              margin: "0.25rem 1rem 0rem 2rem",
                               fontSize: "1.5rem",
                               color: "black",
                             }}
@@ -112,7 +112,7 @@ export default function Cart() {
                         <Tooltip title="Reduce">
                           <Remove
                             style={{
-                              margin: "-1.75rem 0 1rem 10rem",
+                              margin: "0.25rem 1rem 0rem 2rem",
                               fontSize: "1.5rem",
                               color: "black",
                             }}
@@ -120,10 +120,11 @@ export default function Cart() {
                           />
                         </Tooltip>
                       )}
+                      {quantity}
                       <Tooltip title="Add More">
                         <AddIcon
                           style={{
-                            margin: "-1.75rem 0 1rem 1rem",
+                            margin: "0.25rem 0 1rem 1rem",
                             fontSize: "1.5rem",
                             color: "black",
                           }}
@@ -131,8 +132,6 @@ export default function Cart() {
                         />
                       </Tooltip>
                     </div>
-                    <h3>Rs. {price}</h3>
-                    {/* {price * quantity} */}
                   </div>
                 </div>
               </a>
