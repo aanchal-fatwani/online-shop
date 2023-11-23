@@ -145,8 +145,6 @@ export default function Cart() {
 
   function buyHandler() {
     if (localStorage) {
-      // let user = JSON.parse(localStorage.user);
-      // let carts = JSON.parse(localStorage.carts);
       delete carts[user];
       localStorage.carts = JSON.stringify(carts);
     }
