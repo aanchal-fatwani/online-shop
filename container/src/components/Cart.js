@@ -96,7 +96,7 @@ export default function Cart() {
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <h5>{title}</h5>
                     <div style={{ display: "flex", flexDirection: "row", margin: "1rem 0" }}>
-                    <div style={{ minWidth: '10rem', fontSize: '1.75rem', fontWeight: '700'}}>{`Rs. ${price}`}</div>
+                    <div style={{ minWidth: '10rem', fontSize: '1.75rem', fontWeight: '700'}}>{`Rs. ${price.toLocaleString('en-IN')}`}</div>
                       {quantity === 1 ? (
                         <Tooltip title="Remove">
                           <Delete
