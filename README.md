@@ -1,6 +1,6 @@
 # Online Shop
 
-This application contains mulitple independent modules (Header, Dashboard, Products and Categories)
+This application contains multiple independent modules (Header, Dashboard, Products, and Categories)
 
 There is a Container module to define the application and load other MFEs.
 
