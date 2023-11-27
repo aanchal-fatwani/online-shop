@@ -1,8 +1,10 @@
 # Online Shop
 
-This application contains mulitple independent modules (Header, Dashboard, Products and Categories)
+This application contains multiple independent modules (Header, Dashboard, Products, and Categories)
 
 There is a Container module to define the application and load other MFEs.
+
+The individual modules are linked and loaded together by making use of Webpack5 Module Federation.
 
 ## Technologies Used
 React v18, Material UI, Webpack v5
