@@ -8,7 +8,7 @@ export default function Price({ price, discountPercentage }) {
     <div style={{ margin: "1rem 0" }}>
       <span style={{ fontSize: "2rem" }}>
         Rs.
-        {price}
+        {price.toLocaleString('en-IN')}
       </span>
       <span
         style={{
