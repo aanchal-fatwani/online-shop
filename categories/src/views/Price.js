@@ -17,7 +17,7 @@ export default function Price({ price, discountPercentage }) {
           padding: "1rem",
         }}
       >
-        Rs.{parseInt(getOriginalPrice())}
+        Rs.{parseInt(getOriginalPrice()).toLocaleString('en-IN')}
       </span>
     </div>
   );
