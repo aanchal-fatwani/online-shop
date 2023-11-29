@@ -35,7 +35,7 @@ export default function Price({ price, discountPercentage }) {
           >
             M.R.P.:{" "}
             <span style={{ textDecoration: "line-through" }}>
-              Rs.{parseInt(getOriginalPrice())}
+              Rs.{parseInt(getOriginalPrice()).toLocaleString('en-IN')}
             </span>
           </div>
         </>
