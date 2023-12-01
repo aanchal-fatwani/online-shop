@@ -90,7 +90,11 @@ const ContactUs = () => {
               onBlur={(e) => handleBlur(e, 2)}
             />
           </div>
-          <button className="send_button" onClick={(e) => submitHandler(e)}>
+          <button
+            className="send_button"
+            onClick={(e) => submitHandler(e)}
+            style={{ cursor: "pointer" }}
+          >
             {"Send"}
           </button>
         </form>
