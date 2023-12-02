@@ -18,7 +18,7 @@ const Register = () => {
       alert("Please enter valid mobile number!");
       return;
     }
-    if (!/.{8,}/.test(parseInt(password))) {
+    if (!/.{8,}/.test(password)) {
       alert("The minimum password length is 8!");
       return;
     }
