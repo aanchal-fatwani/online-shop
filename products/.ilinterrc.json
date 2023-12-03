@@ -1,0 +1,10 @@
+{
+    "js-linter": false,
+    "html-linter": false,
+    "css-linter": false,
+    "prettier": false,
+    "path": "",
+    "projectType": "",
+    "languageType": "",
+    "linterProfile": "Essential"
+}
