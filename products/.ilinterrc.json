@@ -1,10 +1,12 @@
 {
-    "js-linter": false,
+    "js-linter": true,
     "html-linter": false,
     "css-linter": false,
     "prettier": false,
-    "path": "",
-    "projectType": "",
-    "languageType": "",
-    "linterProfile": "Essential"
+    "path": "./",
+    "projectType": "React",
+    "languageType": "JavaScript",
+    "linterProfile": "Essential",
+    "jsLintCommand": "eslint --ext ts,tsx,js,jsx,vue $path",
+    "jsReportCommand": "eslint --quiet --ext js,jsx,snap,md,ts,tsx,vue $path"
 }
