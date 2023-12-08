@@ -9,7 +9,8 @@
         "ilinter-run": "ilinter-cmd run",
         "ilinter-fix": "ilinter-cmd fix",
         "ilinter-report": "ilinter-cmd report",
-        "ilinter-update": "ilinter-cmd update"
+        "ilinter-update": "ilinter-cmd update",
+        "ianalyzer-init": "ianalyzer --init"
     },
     "keywords": [],
     "author": "",
@@ -19,6 +20,7 @@
         "@emotion/styled": "^11.11.0",
         "@mui/material": "^5.14.4",
         "css-loader": "^6.7.3",
+        "ianalyzer-test-app": "^1.0.0",
         "ilinter-test": "^1.0.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
