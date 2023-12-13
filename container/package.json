@@ -10,7 +10,8 @@
         "ilinter-run": "ilinter-cmd run",
         "ilinter-fix": "ilinter-cmd fix",
         "ilinter-report": "ilinter-cmd report",
-        "ilinter-update": "ilinter-cmd update"
+        "ilinter-update": "ilinter-cmd update",
+        "ianalyzer-init": "ianalyzer --init"
     },
     "keywords": [],
     "author": "",
@@ -21,6 +22,7 @@
         "@mui/icons-material": "^5.14.12",
         "@mui/material": "^5.14.12",
         "dotenv": "^16.3.1",
+        "ianalyzer-test-app": "^1.0.0",
         "ilinter-test": "^1.0.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
