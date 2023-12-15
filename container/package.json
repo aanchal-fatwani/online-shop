@@ -11,7 +11,11 @@
         "ilinter-fix": "ilinter-cmd fix",
         "ilinter-report": "ilinter-cmd report",
         "ilinter-update": "ilinter-cmd update",
-        "ianalyzer-init": "ianalyzer --init"
+        "ianalyzer-init": "ianalyzer --init",
+        "ianalyzer-run": "ianalyzer-cmd run",
+        "ianalyzer-fix": "ianalyzer-cmd fix",
+        "ianalyzer-report": "ianalyzer-cmd report",
+        "ianalyzer-update": "ianalyzer-cmd update"
     },
     "keywords": [],
     "author": "",
