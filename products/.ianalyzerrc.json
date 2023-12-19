@@ -6,7 +6,7 @@
     "path": "./",
     "projectType": "React",
     "languageType": "JavaScript",
-    "linterProfile": "Essential",
-    "jsLintCommand": "eslint --ext ts,tsx,js,jsx,vue $path",
+    "linterProfile": "Recommended",
+    "jsLintCommand": "eslint --ext ts,tsx,js,jsx,vue,html $path",
     "jsReportCommand": "eslint --quiet --ext js,jsx,snap,md,ts,tsx,vue $path"
 }
