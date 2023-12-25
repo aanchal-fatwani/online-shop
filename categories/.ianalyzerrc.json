@@ -2,7 +2,7 @@
     "js-linter": true,
     "html-linter": true,
     "css-linter": true,
-    "prettier": false,
+    "prettier": true,
     "path": "./",
     "projectType": "React",
     "languageType": "JavaScript",
@@ -11,5 +11,6 @@
     "jsReportCommand": "eslint --quiet --ext js,jsx,snap,md,ts,tsx,vue $path",
     "htmlLintCommand": "html-validator $path",
     "cssLintCommand": "stylelint $path**/**.{css,scss,sass}",
-    "cssReportCommand": "stylelint $path**/**.{css,scss,sass}"
+    "cssReportCommand": "stylelint $path**/**.{css,scss,sass}",
+    "prettierLintCommand": "npx prettier $path"
 }
