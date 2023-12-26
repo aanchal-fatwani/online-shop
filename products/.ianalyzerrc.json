@@ -1,6 +1,6 @@
 {
     "js-linter": true,
-    "html-linter": false,
+    "html-linter": true,
     "css-linter": false,
     "prettier": false,
     "path": "./",
@@ -8,5 +8,6 @@
     "languageType": "JavaScript",
     "linterProfile": "Recommended",
     "jsLintCommand": "eslint --ext ts,tsx,js,jsx,vue,html $path",
-    "jsReportCommand": "eslint --quiet --ext js,jsx,snap,md,ts,tsx,vue $path"
+    "jsReportCommand": "eslint --quiet --ext js,jsx,snap,md,ts,tsx,vue $path",
+    "htmlLintCommand": "html-validator $path"
 }
