@@ -1,7 +1,7 @@
 {
     "js-linter": true,
     "html-linter": false,
-    "css-linter": false,
+    "css-linter": true,
     "prettier": true,
     "path": "./",
     "projectType": "React",
@@ -9,5 +9,7 @@
     "linterProfile": "Recommended",
     "jsLintCommand": "eslint --ext ts,tsx,js,jsx,vue,html $path",
     "jsReportCommand": "eslint --quiet --ext js,jsx,snap,md,ts,tsx,vue $path",
-    "prettierLintCommand": "npx prettier $path"
+    "prettierLintCommand": "npx prettier $path",
+    "cssLintCommand": "stylelint $path**/**.{css,scss,sass}",
+    "cssReportCommand": "stylelint $path**/**.{css,scss,sass}"
 }
