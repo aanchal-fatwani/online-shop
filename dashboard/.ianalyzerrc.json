@@ -1,6 +1,6 @@
 {
     "js-linter": true,
-    "html-linter": false,
+    "html-linter": true,
     "css-linter": true,
     "prettier": true,
     "path": "./",
@@ -11,5 +11,6 @@
     "jsReportCommand": "eslint --quiet --ext js,jsx,snap,md,ts,tsx,vue $path",
     "prettierLintCommand": "npx prettier $path",
     "cssLintCommand": "stylelint $path**/**.{css,scss,sass}",
-    "cssReportCommand": "stylelint $path**/**.{css,scss,sass}"
+    "cssReportCommand": "stylelint $path**/**.{css,scss,sass}",
+    "htmlLintCommand": "html-validator $path"
 }
