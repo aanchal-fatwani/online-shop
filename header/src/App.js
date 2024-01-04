@@ -24,8 +24,7 @@ const App = ({ navigate }) => {
     setSearchItem(e.target.value);
   };
 
-  const unslugify = (slug) =>
-    slug
+  const unslugify = (slug) => slug
       .replace(/\-/g, " ")
       .replace(
         /\w\S*/g,
@@ -33,7 +32,7 @@ const App = ({ navigate }) => {
       );
 
   const searchHandler = () => {
-    let r = allCategories.filter((el) => {
+    const r = allCategories.filter((el) => {
       return (
         unslugify(el)
           .toLowerCase()
@@ -49,7 +48,7 @@ const App = ({ navigate }) => {
   };
 
   useEffect(() => {
-    let categories = getAllCategories();
+    const categories = getAllCategories();
     categories.then((response) => {
       let res = response;
       setAllCategories(res);
@@ -76,7 +75,7 @@ const App = ({ navigate }) => {
     setOpen(false);
   };
 
-  const Alert = React.forwardRef(function Alert(props, ref) {
+  const Alert = React.forwardRef((props, ref) => {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
 
