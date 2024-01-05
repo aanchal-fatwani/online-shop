@@ -17,7 +17,7 @@ export default function Cart() {
 
   const deleteHandler = (e, id) => {
     e.preventDefault();
-    let userItems = JSON.parse(carts)[user];
+    const userItems = JSON.parse(carts)[user];
     let items = userItems;
     let index;
     items = items.filter((el, i) => {
@@ -31,17 +31,17 @@ export default function Cart() {
     } else {
       userItems[index].quantity = userItems[index].quantity - 1;
     }
-    let newCart = { ...JSON.parse(carts) };
+    const newCart = { ...JSON.parse(carts) };
     newCart[user] = userItems;
     localStorage.setItem("carts", JSON.stringify(newCart));
-    let totalItms = stateRef.current;
+    const totalItms = stateRef.current;
     setTotalItems(totalItms - 1);
   };
 
   const addHandler = (e, id) => {
     e.preventDefault();
-    let userItems = JSON.parse(carts)[user];
-    let items = userItems;
+    const userItems = JSON.parse(carts)[user];
+    const items = userItems;
     let index;
     for (let i = 0; i < items.length; i++) {
       if (id === items[i].id) {
@@ -50,10 +50,10 @@ export default function Cart() {
       }
     }
     userItems[index].quantity = userItems[index].quantity + 1;
-    let newCart = { ...JSON.parse(carts) };
+    const newCart = { ...JSON.parse(carts) };
     newCart[user] = userItems;
     localStorage.setItem("carts", JSON.stringify(newCart));
-    let totalItms = stateRef.current;
+    const totalItms = stateRef.current;
     setTotalItems(totalItms + 1);
   };
 
@@ -64,8 +64,8 @@ export default function Cart() {
       items = items[user];
       let orderTotal = 0,
         qtyTotal = 0;
-      items &&
-        setProducts(
+      items
+        && setProducts(
           items.map((item) => {
             const { title, price, image, id, quantity } = item;
             orderTotal += price * quantity;

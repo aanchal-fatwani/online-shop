@@ -5,7 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 const Categories = () => {
   const ref = useRef(null);
   const navigate = useNavigate();
-  let routeParams = useParams();
+  const routeParams = useParams();
 
   useEffect(() => {
     mount(ref.current, navigate, routeParams);

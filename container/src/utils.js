@@ -1,7 +1,7 @@
 export function addNewUser(name, mobile, email, password) {
   if (localStorage) {
     password = btoa(password);
-    let userDetails = {
+    const userDetails = {
       name,
       mobile,
       email,
@@ -24,8 +24,7 @@ export function loginUser(mobile, newUser = false) {
   if (localStorage) {
     let allUsers;
     if (!newUser) {
-      allUsers =
-        localStorage["allUsers"] && JSON.parse(localStorage["allUsers"]);
+      allUsers = localStorage.allUsers && JSON.parse(localStorage.allUsers);
     }
     if (allUsers && !allUsers[mobile]) {
       alert("User does not exist.. Sign-up first or try again!");
@@ -61,23 +60,23 @@ export function buyHandler(id, title, image, price, quantity) {
       return;
     }
     let cartItems = [];
-    let user = JSON.parse(localStorage.user);
-    let carts = localStorage.carts && JSON.parse(localStorage.carts);
+    const user = JSON.parse(localStorage.user);
+    const carts = localStorage.carts && JSON.parse(localStorage.carts);
     if (carts) {
       cartItems = carts[user];
       cartItems = cartItems && cartItems.length ? [...cartItems] : [];
     }
     let qty;
     if (
-      cartItems.length !== 0 &&
-      cartItems.filter((el) => el.id == id)?.length > 0
+      cartItems.length !== 0
+      && cartItems.filter((el) => el.id == id)?.length > 0
     ) {
       qty = cartItems.filter((el) => el.id == id)[0].quantity;
       cartItems = cartItems.filter((el) => el.id != id);
     }
     quantity = parseInt(quantity);
-    quantity += (qty ? qty : 0);
-    let newCartItems = {
+    quantity += (qty || 0);
+    const newCartItems = {
       [user]: [
         ...cartItems,
         {
@@ -101,23 +100,23 @@ export function cartHandler(id, title, image, price, quantity) {
       return;
     }
     let cartItems = [];
-    let user = JSON.parse(localStorage.user);
-    let carts = localStorage.carts && JSON.parse(localStorage.carts);
+    const user = JSON.parse(localStorage.user);
+    const carts = localStorage.carts && JSON.parse(localStorage.carts);
     if (carts) {
       cartItems = carts[user];
       cartItems = cartItems && cartItems.length ? [...cartItems] : [];
     }
     let qty;
     if (
-      cartItems.length !== 0 &&
-      cartItems.filter((el) => el.id == id)?.length > 0
+      cartItems.length !== 0
+      && cartItems.filter((el) => el.id == id)?.length > 0
     ) {
       qty = cartItems.filter((el) => el.id == id)[0].quantity;
       cartItems = cartItems.filter((el) => el.id != id);
     }
     quantity = parseInt(quantity);
-    quantity += (qty ? qty : 0);
-    let newCartItems = {
+    quantity += (qty || 0);
+    const newCartItems = {
       [user]: [
         ...cartItems,
         {

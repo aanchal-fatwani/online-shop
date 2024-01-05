@@ -6,8 +6,8 @@ import { buyHandler, cartHandler } from "../utils";
 const Products = () => {
   const ref = useRef(null);
   const navigate = useNavigate();
-  let routeParams = useParams();
-  let utils = { buyHandler, cartHandler };
+  const routeParams = useParams();
+  const utils = { buyHandler, cartHandler };
 
   useEffect(() => {
     mount(ref.current, navigate, routeParams, utils);
