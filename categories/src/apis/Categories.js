@@ -5,7 +5,6 @@ export function getCategoryProducts(category) {
 }
 
 export function getAllCategories() {
-  return fetch("https://dummyjson.com/products/categories").then((res) =>
-    res.json()
+  return fetch("https://dummyjson.com/products/categories").then((res) => res.json()
   );
 }

@@ -2,8 +2,7 @@ import React from "react";
 import Rating from "@mui/material/Rating";
 import Price from "./Price";
 export default function ProductCard({ details }) {
-  const { thumbnail, title, brand, price, discountPercentage, rating, id } =
-    details;
+  const { thumbnail, title, brand, price, discountPercentage, rating, id } = details;
 
   return (
     <div style={{ margin: "1.5rem" }}>

@@ -8,8 +8,7 @@ const App = ({ routeParams }) => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
 
-  const unslugify = (slug) =>
-    slug
+  const unslugify = (slug) => slug
       .replace(/\-/g, " ")
       .replace(
         /\w\S*/g,
@@ -19,7 +18,7 @@ const App = ({ routeParams }) => {
   useEffect(() => {
     if (category === "all") {
       getAllCategories().then((res) => {
-        let cats = res.map((el) => (
+        const cats = res.map((el) => (
           <CategoryCard category={el} unslugCategory={unslugify(el)} />
         ));
         setCategories(cats);
