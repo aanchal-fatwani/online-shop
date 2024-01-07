@@ -13,19 +13,19 @@ export default function BuyOptions({ utils, id, title, image, price, stock }) {
 
   function quantityHandler(e) {
     setQuantity(e.target.value);
-    let newValue = originalStock - e.target.value;
+    const newValue = originalStock - e.target.value;
     setUpdatedStock(newValue);
   }
 
   function quantityOptions() {
-    let qtyOptions = [];
+    const qtyOptions = [];
     for (let i = 1; i <= (stock > 5 ? 5 : stock); i++) {
       qtyOptions.push(<option value={`${i}`}>{i}</option>);
     }
     return qtyOptions;
   }
 
-  let buttonStyles = {
+  const buttonStyles = {
     backgroundColor: "#FFD814",
     borderColor: "#FFD814",
     padding: "0.8rem 3rem",

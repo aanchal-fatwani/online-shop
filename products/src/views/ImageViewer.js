@@ -18,8 +18,8 @@ function ImageViewer({ images }) {
       <div
         style={{ display: "flex", flexDirection: "column", marginTop: "2rem" }}
       >
-        {images?.length > 1 &&
-          images.map((el) => (
+        {images?.length > 1
+          && images.map((el) => (
             <img
               src={el}
               onMouseLeave={(ev) => outHandler(ev, el)}
